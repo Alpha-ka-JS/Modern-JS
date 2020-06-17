@@ -7,9 +7,9 @@
 * [Reference Code](#reference-code)
 
 # <a name="team-members"></a>Team Members
-* Lee Jehwan(Jehwan)
-* Choi Eunjoung(soleileun)
-* Jung Sungwon(sungwon2054)
+* Lee Jehwan([LeeJehwan](https://github.com/LeeJehwan))
+* Choi Eunjoung([soleileun](https://github.com/soleileun))
+* Jung Sungwon([sungwon2054](https://github.com/sungwon2054))
 
 # <a name="reference-code"></a>모던 자바스크립트 입문
 
