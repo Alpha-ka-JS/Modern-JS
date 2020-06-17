@@ -1,3 +1,10 @@
+![GitHub contributors](https://img.shields.io/github/contributors/Alpha-ka-js/Modern-jS?&color=brightgreen)
+![<Languages>](https://img.shields.io/github/languages/count/Alpha-ka-JS/Modern-JS?&color=brightgreen)
+![<TopLanguages>](https://img.shields.io/github/languages/top/Alpha-ka-JS/Modern-JS?&color=brightgreen)
+![<repoSize>](https://img.shields.io/github/repo-size/Alpha-ka-JS/Modern-JS)
+![<CommitActivity>](https://img.shields.io/github/commit-activity/m/Alpha-ka-JS/Modern-JS)
+![<LastCommit>](https://img.shields.io/github/last-commit/Alpha-ka-JS/Modern-JS)
+ 
 # Modern JavaScript Study
 ![ES6](https://jaeyeophan.github.io/images/javascript_es6.png)
 
