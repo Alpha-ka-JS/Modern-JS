@@ -17,6 +17,7 @@
 * Lee Jehwan([LeeJehwan](https://github.com/LeeJehwan))
 * Choi Eunjoung([soleileun](https://github.com/soleileun))
 * Jung Sungwon([sungwon2054](https://github.com/sungwon2054))
+* Kim June([rlawns324](https://github.com/rlawns324))
 
 # <a name="reference-code"></a>모던 자바스크립트 입문
 
