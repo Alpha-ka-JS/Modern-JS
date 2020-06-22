@@ -20,7 +20,7 @@ var sym3 = Symbol.for("club");
 var sym4 = Symbol("club");
 console.log(sym3 == sym4);
 
-//보관표현식
+//보간 표현식
 var a = 2, b = 3;
 console.log(`${a} + ${b} = ${a+b}`);
 var now = new Date();

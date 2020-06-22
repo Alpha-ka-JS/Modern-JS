@@ -1,6 +1,6 @@
 /*
 C, Java -> 정적타입
-Js -> 동적타입
+Js, Pyhton -> 동적타입 = duck typing
 */
 var pi = 3.14;
 console.log(pi);
