@@ -30,3 +30,4 @@ var circle={center ={x:1.0,y:2.5}, radius:2.5};
 var person ={name:"EUNJOUNG", age:26, sex:"female", married:false};
 
 //프로퍼티에 저장된 값의 타입이 함수면 그 프로퍼티를 메서드라고 함. 
+
