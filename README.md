@@ -11,12 +11,23 @@
 
 # Table Contents
 * [Team Members](#team-members)
+* [Study Schedule](#study-schedule)
 * [Reference Code](#reference-code)
 
 # <a name="team-members"></a>Team Members
 * Lee Jehwan([LeeJehwan](https://github.com/LeeJehwan))
 * Choi Eunjoung([soleileun](https://github.com/soleileun))
 * Jung Sungwon([sungwon2054](https://github.com/sungwon2054))
+
+# <a name="study-schedule"></a>Study Schedule
+회차 | 일정 | 진도
+------|------|-----
+1회|2020/06/22|ch1~ch3
+2회|2020/06/28|ch4~ch6
+3회| |
+4회| |
+5회| |
+
 
 # <a name="reference-code"></a>모던 자바스크립트 입문
 
