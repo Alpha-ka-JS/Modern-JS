@@ -20,14 +20,14 @@ var a = new Array(2,4);
 var various = new Array(3.14, "pi", true, {x:1, y:2},[2,4,6,7]);
 
 //4.5.6
-var a = ["A", "B", "C"];
-a[3] = "D";
-a.push("E");
-delete a[3];
-console.log(a);
-console.log(a.length);
+var c = ["A", "B", "C"];
+c[3] = "D";
+c.push("E");
+delete c[3];
+console.log(c);
+console.log(c.length);
 
 //4.5.7
-var a = ["A", "B", "C"];
-a[4] = "E";
-console.log(a);
+var b = ["A", "B", "C"];
+b[4] = "E";
+console.log(b);
