@@ -27,4 +27,3 @@ function Circle(center, radius){
         return Math.PI * this.radius * this.radius;
     };
 }
-
