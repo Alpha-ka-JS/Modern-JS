@@ -1,9 +1,6 @@
 //5.3.1
-/*
-다시 보기
- */
 console.log(10 + " little indians");
-console.log(1 + {}); // {} = [object Object] 출력 왜 ??
+console.log(1 + {}); // {} 가 객체이므로 [object Object] 로나옴
 console.log(true + (new Date()));
 
 //5.3.2
