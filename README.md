@@ -17,7 +17,7 @@
 # <a name="team-members"></a>Team Members
 * Lee Jehwan([LeeJehwan](https://github.com/LeeJehwan))
 * Choi Eunjoung([soleileun](https://github.com/soleileun))
-* Jung Sungwon([sungwon2054](https://github.com/sungwon2054))
+* Jeong Sungwon([sungwon2054](https://github.com/sungwon2054))
 
 # <a name="study-schedule"></a>Study Schedule
 회차 | 일정 | 진도
