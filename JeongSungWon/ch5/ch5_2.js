@@ -16,9 +16,6 @@ console.log(Math.LOG10E);
 console.log(Math.SQRT2);
 
 //5.2.3. 부동소수점
-/*
-여기 다시 공부<
-*/
 console.log(Math.sqrt(100001) - Math.sqrt(100000)); //0.001581134877255863
 console.log(1/(Math.sqrt(100001) + Math.sqrt(100000))); //0.0015811348772568783
 a = 0.16, b = 0.2;
