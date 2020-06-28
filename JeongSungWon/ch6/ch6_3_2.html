@@ -3,23 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>시각을 콘솔이 표시하기</title>
+    <title>시각을 콘솔에 표시하기</title>
     <script>
-        // function disPlayTime(){
-        //     var d = new Date();
-        //     console.log("현재 시각은 " + d.toLocaleString() + " 입니다");
-        // }
-        window.onload = function(){
-            var button = document.getElementById("button");
-            //button.onclick = displayTime
-            button.onclick = function dispayTime(){
+        function displayTime(){
             var d = new Date();
-            console.log("현재 시각은 " + d.toLocaleString() + " 입니다");
-            };
-        }  
+            console.log("현재 시각은 " + d.toLocaleString() +" 입니다");
+        }
     </script>
+
 </head>
 <body>
-    <input type ="button" value="click" id="button">
+    <input type="button" value="click" onclick="displayTime()">
 </body>
 </html>
