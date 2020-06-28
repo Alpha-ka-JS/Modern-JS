@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // setTimeout(function(){
+        //     console.log(new Date());
+        // },2000);
+        var timer = setTimeout(function(){
+            console.log(new Date());
+        },2000);
+        clearTimeout(timer);
+
+        // setInterval(function(){
+        //     console.log(new Date());
+        // },1000);
+        var timer = setInterval(function(){console.log(new Date());},1000);
+        clearInterval(timer);
+
+        setInterval("console.log(new Date())",1000);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
