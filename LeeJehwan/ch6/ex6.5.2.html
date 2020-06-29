@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas의 기본2</title>
+    <script>
+      window.onload = function () {
+        var canvas = document.getElementById("mycanvas");
+        var ctx = canvas.getContext("2d");
+        ctx.beginPath();
+        ctx.moveTo(60, 10);
+        ctx.lineTo(110, 100);
+        ctx.lineTo(10, 100);
+        ctx.closePath();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(60, 120);
+        ctx.lineTo(110, 210);
+        ctx.lineTo(10, 210);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(200, 0);
+        ctx.lineTo(200, 100);
+        ctx.moveTo(150, 50);
+        ctx.lineTo(250, 50);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(
+          200,
+          200,
+          80,
+          (30 * Math.PI) / 180,
+          (120 * Math.PI) / 180,
+          false
+        );
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(
+          200,
+          200,
+          80,
+          (30 * Math.PI) / 180,
+          (120 * Math.PI) / 180,
+          true
+        );
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(
+          400,
+          200,
+          80,
+          (30 * Math.PI) / 180,
+          (120 * Math.PI) / 180,
+          false
+        );
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(
+          400,
+          200,
+          80,
+          (30 * Math.PI) / 180,
+          (120 * Math.PI) / 180,
+          true
+        );
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(300, 10);
+        ctx.lineTo(500, 10);
+        ctx.arc(500, 60, 50, -Math.PI / 2, 0, false);
+        ctx.lineTo(550, 160);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(300, 20);
+        ctx.arcTo(500, 20, 500, 170, 50);
+        ctx.lineTo(500, 160);
+        ctx.stroke();
+
+        function strokeRoundedRect(ctx, x, y, width, height, radius) {
+          ctx.beginPath();
+          ctx.moveTo(x + radius, y);
+          ctx.arcTo(x + width, y, x + width, y + height, radius);
+          ctx.arcTo(x + width, y + height, x, y + height, radius);
+          ctx.arcTo(x, y + height, x, y, radius);
+          ctx.arcTo(x, y, x + width, y, radius);
+          ctx.stroke();
+        }
+        strokeRoundedRect(ctx, 10, 310, 100, 80, 10);
+        strokeRoundedRect(ctx, 130, 310, 100, 80, 30);
+
+        ctx.lineWidth = 10;
+        ctx.strokeStyle = "red";
+        ctx.fillStyle = "blue";
+        ctx.strokeRect(250, 310, 100, 80);
+        ctx.fillRect(370, 310, 100, 80);
+
+        ctx.strokeStyle = "black";
+        ctx.fillStyle = "black";
+        ctx.lineWidth = 2;
+        ctx.strokeRect(490, 210, 100, 80);
+        ctx.lineWidth = 10;
+        ctx.strokeRect(490, 310, 100, 80);
+      };
+    </script>
+  </head>
+  <body>
+    <canvas id="mycanvas" width="640" height="400"></canvas>
+  </body>
+</html>
