@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="text/javascript">
+      var a = [2, 4, 6];
+      console.log("배열", a, "의 길이는", a.length, "입니다.");
+      console.log("배열 " + a + "의 길이는 " + a.length + " 입니다.");
+
+      var name = "Tom";
+      var height = 172.5;
+      console.log("그의 이름은 %s 이며 키는 %f cm 입니다.", name, height);
+
+      var p = { x: 1, y: 2 };
+      console.dir(p);
+
+      function f() {
+        return true;
+      }
+      console.log(f);
+      console.dir(f);
+
+      console.count("카운터1"); // 카운터1: 1
+      console.count("카운터1"); // 카운터1: 2
+      console.count("카운터2"); // 카운터2: 1
+      console.count("카운터2"); // 카운터2: 2
+      console.count("카운터1"); // 카운터1: 3
+
+      console.time("answer_time");
+      alert("확인 버튼을 누르십시오");
+      console.timeEnd("answer_time");
+    </script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      console.log(document.body);
+      console.dir(document.body);
+    </script>
+  </body>
+</html>
