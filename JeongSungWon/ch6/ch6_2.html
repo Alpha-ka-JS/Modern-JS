@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title></title>
+
+    <script>
+        var a = [2, 4, 6];
+        console.log("배열", a, "의 길이는", a.length, "입니다");
+        console.log("배열 "+ a + " 의 길이는 " + a.length +"입니다");
+
+        var name = "Tom";
+        var height = 172.5;
+        console.log("그의 이름은 %s 이며 키는 %f cm 입니다", name, height);
+        console.log(typeof height);
+        //Q. %f는 부동소수점 값으로 변환 하는데 node.js는 지원하지 않는다는데
+        //위에 해보니까 되는데??
+        //6.2.3
+        var p = { x:1, y:2};
+        console.dir(p);
+
+        console.time("answer_time");
+        alert("확인 버튼을 누르십시오");
+        console.timeEnd("answer_time");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
