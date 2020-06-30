@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //6.1 대화상자 표시하기
+      /*웹 브라우저의 전역 객체인 window 객체에는 대화상자를 표시하기 위한 메서드가 3개 있다. -alert, prompt, confirm
+대화상자 - 입력을 하거나 메시지를 확인하기 위해 별도로 여는 창을 말함bundleRenderer.renderToStream
+대화상자는 모달modal 창이다. 대화상자가 떠있는 중에는 부모 창의 작업이 일시적으로 정지되어 부모 창을 조작할 수 없다. 
+일반 텍스트만 표시할 수 있으며 줄 바꿈문자등은 이스케이프 시퀀스로 표현한다.
+
+*/
+      // alert("Hello!");
+      var name = prompt("이름을 입력하십시오");
+      var name = prompt("이름을 입력하십시오", "최은정");
+      var age = parseInt(prompt("나이를 입력하세요"));
+      var height = parseFloat(prompt("키를 입력하세요"));
+      var ret = confirm("링크를 표시하겠습니까?"); //confirm은 true,false를 반환한다.
+      document.write("name : " + name + "<br>");
+      document.write("age : " + age);
+      document.write("height : " + height);
+      document.write("link : " + ret);
+    </script>
+  </body>
+</html>
