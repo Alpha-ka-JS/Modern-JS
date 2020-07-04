@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //에라토스테네스의 체 (소수구하기)
+      /*
+      정수 n을 지정한다 2 이상 n이하 정수 목록을 만든다. 가장 작은 수인 2는 소수다
+      그것만 남겨두고 2의 배수를 모두 목록에서 지운다.
+      남은 숫자중 가장 작은 수인 3은 소수다
+      그것만 남겨두고 3의 배수를 목록에서 모두 지운다.. 이 작업을 반복한다
+       */
+
+      var n = parseInt(prompt("n을 입력해주세요!"));
+      var p = []; //아래 i가 소수면 p[i]=true, 아니라면 false로 처리
+      for (var i = 2; i <= n; i++) {
+        p[i] = true;
+      }
+      var max = Math.floor(Math.sqrt(n));
+      var x = 2;
+      while (x <= max) {
+        for (var i = 2 * x; i <= n; i += x) {
+          p[i] = false;
+        }
+        while (!p[++x]);
+      }
+      for (var i = 2; i <= n - 2; i++) {
+        if (p[i] && p[i + 2]) {
+          document.write(i + "," + (i + 2) + "<br>");
+        }
+      }
+    </script>
+  </body>
+</html>
