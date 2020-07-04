@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>시각을 콘솔에 표시하기</title>
+    <script>
+      /*DOM에서 가져온 HTML요소에 이벤트 처리기 지정하기
+          DOM은 자바스크립트등의 프로그램이 HTL 요소를 조작할 수 있게 하는 인터페이스
+       DOM 객체에서는 html문서나 요소를 가리키는 객체로 자바스크립트를 사용하여 html 문서를 조작함
+       window : window객체라고 부르며 웹 브라우저 윈도우 하나 또는 탭 하나를 가리킨다.
+       document : Document 객체라고 부르며 html 문서 전체를 가리킨다.
+       html문서에서 html 요소를 가져오거나 새로 만드는 등 문서 전반에 걸친 기능을 제공한다.
+      요소객체 : html 문서의 요소를 가리키는 객체
+      */
+      function displayTime() {
+        var d = new Date();
+        console.log("현재 시각은 " + d.toLocaleString() + "입니다.");
+      }
+      //window객체의 onload프로퍼티에 함수를 저장한다.
+      //이 함수는 웹 브라우저가 문서를 모두 읽어 들인 후 시작한다.
+      window.onload = function () {
+        var button = document.getElementById("btn");
+        button.onclick = displayTime;
+        // input 요소를 클릭했을때 동작할 이벤트 처리기
+        // 요소객체의 onclick 프로퍼티 값으로 함수 displayTime 의 참조를 대입한다.
+        // onclick 이벤트 처리기를 등록하기 위한 프로퍼티를 가리켜 이벤트 처리기 프로퍼티라고 함.
+
+        //이벤트 처리기가 등록되어있지 않은 이벤트 처리기 프로퍼티에는 기본적으로 null이 담겨져있다.
+        console.log(button.onkeydown);
+        //button.onclick = null; 하면 제거됨
+      };
+
+      //타이머
+      // 지정된 시간이 흐른 후에 함수 실행하기 :setTimeout
+      setTimeout(function () {
+        console.log(new Date());
+      }, 2000); //일정 시간이 흐른 후 한 번만 호출되는 함수를 등록할 수 있다.
+      var timer = setTimeout(displayTime, 10000);
+      clearTimeout(timer);
+
+      //지정된 시간마다 반복해서 실행하기  :setInterval
+      setInterval(function () {
+        console.log(new Date() + " with SetInterval");
+      }, 1000);
+      var timer = setInterval(() => {
+        console.log("setinterval with timer");
+      }, 2000);
+      clearInterval(timer);
+      setInterval('console.log("hello")', 1000);
+    </script>
+  </head>
+
+  <body>
+    <input type="button" id="btn" value="click" />
+  </body>
+</html>
