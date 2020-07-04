@@ -19,6 +19,8 @@ function f(x,y){
 }
 f(1,2);
 
+//separator 는  "/"만을 인자로 받음
+//뒤의 나머지는 Arguments 객체로 받음
 function myConcat(separator){
     var s ="";
     for(var i = 1; i < arguments.length; i++){
@@ -28,5 +30,3 @@ function myConcat(separator){
     return s;
 }
 console.log(myConcat("/", "apple", "orange", "peach"));
-
-
