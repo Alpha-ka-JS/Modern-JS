@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>고혈압인지 여부 판단하기</title>
+  </head>
+  <body>
+    <script>
+      //수축기 혈압과 이완기 혈압을 입력해 고혈압인지 판단하기
+      window.onload = function () {
+        //위에 화면이 다 뿌려지면? 준비되면이었던거같은데 그냥 위치를 바꿔주면 될 문제 아닌가?
+        document.getElementById("button").onclick = function () {
+          var hp = parseFloat(document.getElementById("hp").value);
+          var lp = parseFloat(document.getElementById("lp").value);
+          var jdt = document.getElementById("judgement");
+          if (hp < 120 && lp < 80) {
+            jdt.innerHTML = "정상";
+          } else if (hp < 139 && lp < 89) {
+            jdt.innerHTML = "다소 높음";
+          } else {
+            jdt.innerHTML = "고혈압";
+          }
+        };
+      };
+    </script>
+    <p>수축기 혈압 (최고혈압) : <input type="number" id="hp" /></p>
+    <p>이완기 혈압 (최저혈압) : <input type="number" id="lp" /></p>
+    <p id="judgement">결과 표시</p>
+    <input type="button" id="button" value="check" />
+  </body>
+</html>
