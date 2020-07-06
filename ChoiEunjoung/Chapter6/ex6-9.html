@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas의 기본 2</title>
+    <script>
+      window.onload = function () {
+        var canvas = document.getElementById("mycanvas");
+        var ctx = canvas.getContext("2d");
+        //그리기
+        ctx.beginPath();
+        ctx.moveTo(60, 10); //지정좌표로 이동
+        ctx.lineTo(110, 100); //현재좌표에서 지정좌표까지 선 정의
+        ctx.lineTo(10, 100);
+        ctx.closePath(); //시작점과 끝점을 연결하고 닫음
+        ctx.stroke();
+        //채우기
+        ctx.beginPath();
+        ctx.moveTo(60, 120);
+        ctx.lineTo(110, 210);
+        ctx.lineTo(10, 210);
+        ctx.fill(); //여기는 자동으로 닫아서 closePath 안해줌
+        // + 그리기
+        ctx.beginPath();
+        ctx.moveTo(150, 100);
+        ctx.lineTo(150, 200);
+        ctx.moveTo(100, 150);
+        ctx.lineTo(200, 150);
+        ctx.stroke();
+        //원그리기
+        ctx.beginPath();
+        // 시계 방향
+        ctx.arc(300, 100, 80, (30 * Math.PI) / 180, (120 * Math.PI) / 180, false);
+        ctx.stroke();
+        // 시계 반대 방향
+        ctx.beginPath();
+        ctx.arc(300, 100, 80, (30 * Math.PI) / 180, (120 * Math.PI) / 180, true);
+        ctx.stroke();
+
+        // 선과 원호를 조합해서 둥근 모서리만들기
+        ctx.beginPath();
+        ctx.moveTo(400, 10);
+        ctx.lineTo(500, 10);
+        ctx.arc(500, 60, 50, -Math.PI / 2, 0, false);
+        ctx.lineTo(550, 160);
+        ctx.stroke();
+
+        // 둥근 모서리 두번째방법 arcTo
+        ctx.beginPath();
+        ctx.moveTo(40, 330);
+        ctx.arcTo(250, 330, 250, 160, 50);
+        ctx.lineTo(250, 180);
+        ctx.stroke();
+      };
+    </script>
+  </head>
+  <body>
+    <canvas id="mycanvas" width="640" height="400"></canvas>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지 가져오기</title>
+    <style>
+      canvas {
+        border: 2px solid red;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        var canvas = document.getElementById("mycanvas");
+        var ctx = canvas.getContext("2d");
+        var img = new Image(); //객체를 먼저 만들고
+        img.onload = function () {
+          ctx.drawImage(img, 10, 10); //그려라
+        };
+        img.src = "./iu.jpg";
+        // img.src = "https://upload.wikimedia.org/wikipedia/commons/5/5b/IU_at_%27dlwlrma%27_concert_in_Jeju_on_January_5%2C_2019_%283%29.jpg";
+      };
+    </script>
+  </head>
+  <body>
+    <canvas id="mycanvas" width="550" height="820"></canvas>
+  </body>
+</html>
