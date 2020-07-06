@@ -1,0 +1,20 @@
+{
+  "Type of Execution Context": {
+    "Global Executin Context": {},
+    "Functional Execution Context": {},
+    "Eval Function Execution Context": {}
+  },
+  "Execution Context": {
+    "Lexical Environment Component": {
+      "Environment Record": {
+        "Declarative Environment Record": {},
+        "Object Environment Rocord": {
+          "bindOject": ""
+        }
+      },
+      "Outer Lexical Environment Reference": {}
+    },
+    "Variable Environment Component": {},
+    "This Binding": null
+  }
+}

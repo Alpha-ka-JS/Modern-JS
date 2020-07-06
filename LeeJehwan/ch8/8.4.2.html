@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>코흐 곡선</title>
+    <script>
+      function koch(c, n, x, y, L, color) {
+        var deg = Math.PI / 180;
+        c.strokeStyle = color;
+        c.beginPath();
+        c.moveTo(x, y);
+        hat(n, x, y, 0, L);
+        c.stroke();
+        function hat(n, x, y, t, L) {
+          var p;
+          if (n == 0) {
+            p = {
+              x: x + L * Math.cos(t),
+              y: y + L * Math.sin(t),
+            };
+            c.lineTo(p.x, p.y);
+          } else {
+            p = hat(n - 1, x, y, t, L / 3);
+            p = hat(n - 1, p.x, p.y, t - 60 * deg, L / 3);
+            p = hat(n - 1, p.x, p.y, t + 60 * deg, L / 3);
+            p = hat(n - 1, p.x, p.y, t, L / 3);
+          }
+          return p;
+        }
+      }
+      window.onload = function () {
+        var canvas = document.getElementById("mycanvas");
+        var ctx = canvas.getContext("2d");
+        koch(ctx, 0, 20, 150, 350, "blue");
+        koch(ctx, 1, 420, 150, 350, "blue");
+        koch(ctx, 2, 20, 350, 350, "blue");
+        koch(ctx, 3, 420, 350, 350, "blue");
+        koch(ctx, 4, 20, 550, 350, "blue");
+        koch(ctx, 5, 420, 550, 350, "blue");
+      };
+    </script>
+  </head>
+  <body>
+    <canvas id="mycanvas" width="800" hegith="800"></canvas>
+  </body>
+</html>
