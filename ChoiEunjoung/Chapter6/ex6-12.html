@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>픽셀 RGB 값...</title>
+    <style>
+      canvas {
+        border: 2px solid black;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        var canvas = document.getElementById("mycanvas");
+        var ctx = canvas.getContext("2d");
+        var img = new Image();
+        img.onload = function () {
+          //객체 생성하고 나서 실행하겠다는 것
+          ctx.drawImage(img, 0, 0);
+          var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          imageData.getRGBA = function (m, n, i) {
+            return this.data[this.width * 4 * n + 4 * m + i];
+          };
+          var rgb = document.getElementById("rgb");
+          canvas.onclick = function (event) {
+            var x = event.offsetX; //  x좌표
+            var y = event.offsetY; // y좌표
+            rgb.innerHTML = " R:" + to3digit(imageData.getRGBA(x, y, 0)) + " G:" + to3digit(imageData.getRGBA(x, y, 1)) + " B:" + to3digit(imageData.getRGBA(x, y, 2));
+          };
+        };
+        img.src = "./iu.jpg";
+      };
+      function to3digit(n) {
+        return ("000" + n).slice(-3);
+      }
+    </script>
+  </head>
+
+  <body>
+    <div><output id="rgb"></output></div>
+    <canvas id="mycanvas" width="550" height="820"></canvas>
+  </body>
+</html>
