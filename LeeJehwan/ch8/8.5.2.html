@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      console.log(window);
+      var a = { x: 1, y: 2 };
+      console.log(window.a);
+      function norm(x) {}
+      console.log(window.norm);
+      console.log(Object.getOwnPropertyDescriptor(window, "a"));
+      delete a;
+      console.log(a);
+
+      b = { x: 1, y: 2 };
+      console.log(Object.getOwnPropertyDescriptor(window, "b"));
+      delete b;
+      // console.log(b); // error
+    </script>
+  </head>
+  <body></body>
+</html>
