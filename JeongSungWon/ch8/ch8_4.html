@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>코흐 곡선</title>
+	<script>
+		function koch(c,n,x,y,L,color) {
+			var deg = Math.PI/180;
+			c.strokeStyle = color;
+			c.beginPath();
+			c.moveTo(x,y);
+			hat(n,x,y,0,L);
+			c.stroke();
+			// 선분을 반복해서 꺾어 그리는 함수
+			// n : 계층, (x, y) : 시작점, t : 그리는 방향의 각도, L : 선의 길이
+			function hat(n,x,y,t,L) {
+				var p;
+				if( n==0 ) {	// n = 0이면 직선을 그린다
+					p = { x: x+L*Math.cos(t), y: y+L*Math.sin(t) };
+					c.lineTo(p.x,p.y);
+				} else {		// 그렇지 않으면, n을 하나 줄여서 꺾은 선으로 대체한다
+					p = hat(n-1,x  ,y  ,t       ,L/3);	// L/3 이동
+					p = hat(n-1,p.x,p.y,t-60*deg,L/3);	// 왼쪽으로 60° 꺾은 후에, L/3 이동
+					p = hat(n-1,p.x,p.y,t+60*deg,L/3);	// 오른쪽으로 120° 꺾은 후에, L/3 이동
+					p = hat(n-1,p.x,p.y,t       ,L/3);	// 왼쪽으로 60° 꺾은 후에, L/3 이동
+				}
+				return p;
+			}
+		}
+		window.onload = function() {
+			var canvas = document.getElementById("mycanvas");
+			var ctx = canvas.getContext("2d");
+			koch(ctx,0,20,150,350,"blue");
+			koch(ctx,1,420,150,350,"blue");
+			koch(ctx,2,20,350,350,"blue");
+			koch(ctx,3,420,350,350,"blue");
+			koch(ctx,4,20,550,350,"blue");
+			koch(ctx,5,420,550,350,"blue");
+		};
+	</script>
+</head>
+<body>
+	<canvas id="mycanvas" width=800 height=800></canvas>
+</body>
+</html>
