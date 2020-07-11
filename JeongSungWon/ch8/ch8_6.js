@@ -93,4 +93,4 @@ function Primes(n){
 }
 var primeProduct = Primes(100000);
 console.log(primeProduct(2));
-console.log(primeProduct(2));
+console.log(primeProduct(2)); 
