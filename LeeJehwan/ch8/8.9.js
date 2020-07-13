@@ -109,5 +109,63 @@ function compose2(f, g) {
     return f.call(this, g.apply(this, arguments));
   };
 }
-var h2 = compose2(square, add1);
-console.log(h(2));
+var add2 = function (x, y) {
+  return x + y;
+};
+var h2 = compose2(square, add2);
+console.log(h2(2, 3));
+
+function product(x, y) {
+  return x * y;
+}
+
+product2 = function (y) {
+  return product(2, y);
+};
+console.log(product2(3));
+product3 = product.bind(null, 2);
+console.log(product3(3));
+
+function partial(f) {
+  var args = arguments;
+  return function () {
+    var a = Array.prototype.slice.call(args, 1);
+    for (var i = 0, j = 0; i < a.length; i++) {
+      if (a[i] == undefined) a[i] = arguments[j++];
+    }
+    return f.apply(this, a);
+  };
+}
+
+var square = partial(Math.pow, undefined, 2);
+var sqrt = partial(Math.pow, undefined, 0.5);
+var cubicroot = partial(Math.pow, undefined, 1 / 3);
+var exp = partial(Math.pow, Math.E, undefined);
+
+console.log(square(3));
+console.log(sqrt(4));
+console.log(cubicroot(27));
+console.log(exp(0));
+
+var pow = function (exponent) {
+  return function (base) {
+    return Math.pow(base, exponent);
+  };
+};
+
+var square = pow(2);
+var sqrt = pow(0.5);
+var cubicroot = pow(1 / 3);
+
+console.log(square(3));
+console.log(sqrt(4));
+console.log(cubicroot(27));
+
+// 배열 요소에 대한 제곱 합의 제곱근
+var sum = function (a, b) {
+  return a + b;
+};
+var a = [1, 2, 3, 4];
+var abs_a = pow(0.5)(a.map(pow(2)).reduce(sum));
+// (1^2 + 2^2 + 3^2 + 4^2)^1/2
+console.log(abs_a);
