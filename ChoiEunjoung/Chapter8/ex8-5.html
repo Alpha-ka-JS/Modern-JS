@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반복문 안에서 클로저 만들기~</title>
+    <script>
+      window.onload = function () {
+        var elm = document.getElementsByTagName("input");
+        for (var i = 0; i < elm.length; i++) (function (_i) {
+          elm[_i].onclick = function () {
+           // console.log(i); //이런식으로 하면 3 3번찍힘
+            console.log(_i); //0 1 2
+          };
+        })(i);
+      };
+          </script>
+  </head>
+
+      <input type="button" value="0">
+      <input type="button" value="1">
+      <input type="button" value="2">
+      
+  </body>
+</html>
