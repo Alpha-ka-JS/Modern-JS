@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반복문 안에서 클로저 만들기~2</title>
+    <script>
+      window.onload = function () {
+        var elm = document.getElementsByTagName("input");
+        for (let i = 0; i < elm.length; i++){ //let이 유효범위를 가지고있기때문이다.  그 시점의 루프 카운터 값을 넘긴다
+          elm[i].onclick = function () {
+            console.log(i); //0 1 2
+          };
+        }
+      };
+          </script>
+  </head>
+
+      <input type="button" value="0">
+      <input type="button" value="1">
+      <input type="button" value="2">
+      
+  </body>
+</html>
