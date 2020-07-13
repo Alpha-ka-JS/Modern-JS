@@ -50,3 +50,29 @@ function* g() {
 }
 var iter = g();
 for (var v of iter) console.log(v);
+
+function list() {
+  return arguments;
+}
+var t = list`a${11}b${22}c${33}`;
+console.log(t);
+
+function htmlEscape(strings, ...values) {
+  var result = strings[0];
+  for (var i = 0; i < values.length; i++) {
+    result += escape(values[i]) + strings[i + 1];
+  }
+  return result;
+  function escape(s) {
+    return s
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/'/g, "&#039;")
+      .replace(/"/g, "&quot;")
+      .replace(/`/g, "&#096;");
+  }
+}
+var userinput = "<script>alter('test');</script>";
+var message = htmlEscape`<p>${userinput}</p>`;
+console.log(message);
