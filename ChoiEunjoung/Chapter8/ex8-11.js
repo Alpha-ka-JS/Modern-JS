@@ -70,7 +70,7 @@ var Person = (name, age) => {
 /*
 - 나머지 매개변수 함수의 인자가 들어가는 부분에 ...을 입력하면 그만큼의 인수를 배열로 받을 수 있다.. 
 */
-function f(a, b, ...args) {
+function f2(a, b, ...args) {
   console.log(a, b, args);
 }
 f(1, 2, 3, 4, 5, 6, 7); //undefined??
