@@ -73,7 +73,7 @@ var Person = (name, age) => {
 function f2(a, b, ...args) {
   console.log(a, b, args);
 }
-f(1, 2, 3, 4, 5, 6, 7); //undefined??
+f2(1, 2, 3, 4, 5, 6, 7); //undefined??
 
 var sum = (...args) => {
   for (var i = 0, s = 0; i < args.length; i++) s += args[i];
