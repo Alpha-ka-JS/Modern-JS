@@ -14,7 +14,7 @@ var add1 = function (x) {
 var h = compose(square, add1);
 console.log(h(2));
 
-function ompose(f, g) {
+function compose(f, g) {
   return function () {
     return f.call(this, g.apply(this.arguments));
   };
