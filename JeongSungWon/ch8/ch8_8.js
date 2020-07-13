@@ -16,7 +16,7 @@ sayToTom("Hello", "Mr.");
 //8.8.5 함수에 프로퍼티 추가하기
 function f(x) {}
 f.p = 6;
-f.g = function(){};
+f.g = function() {};
 
 function fibonacci(n){
     if(n<2) return n;
