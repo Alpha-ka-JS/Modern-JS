@@ -1,5 +1,5 @@
 var myApp = myApp || {};
-myApp.name = "Tom";
+myApp.name = 'Tom';
 myApp.showName = function () {
   console.log(this.name);
 };
@@ -8,7 +8,7 @@ myApp.controls = {};
 myApp.controls.timeInterval = 16;
 
 myApp.view.draw = function () {
-  console.log("draw");
+  console.log('draw');
   // console.log(this.name);
   // console.log(this.controls.timeInterval)
 };
@@ -17,10 +17,10 @@ console.log(myApp);
 myApp.showName();
 myApp.view.draw();
 
-var x = "global x";
+var x = 'global x';
 (function () {
-  var x = "local x";
-  var y = "local y";
+  var x = 'local x';
+  var y = 'local y';
   console.log(x);
   console.log(y);
 })();
@@ -29,7 +29,7 @@ console.log(x);
 
 var Module = Module || {};
 (function (_Module) {
-  var name = "NoName";
+  var name = 'NoName';
   function getName() {
     return name;
   }
@@ -41,5 +41,5 @@ var Module = Module || {};
   };
 })(Module);
 Module.showName();
-Module.setName("Tom");
+Module.setName('Tom');
 Module.showName();

@@ -2,13 +2,13 @@ var t = `Man errs as long as
 he strives.`;
 console.log(t);
 
-var t = "Man errs as long as\nhe strives.";
+var t = 'Man errs as long as\nhe strives.';
 console.log(t);
 
 var t = String.raw`Man errs as long as\nhe strives.`;
 console.log(t);
 
-var t = "Man errs as long as\\nhe strives.";
+var t = 'Man errs as long as\\nhe strives.';
 console.log(t);
 
 var a = 2,

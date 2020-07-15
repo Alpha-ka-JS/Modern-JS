@@ -1,17 +1,17 @@
 var tom = {
-  name: "Tom",
+  name: 'Tom',
   sayHello: function () {
-    console.log("hello! " + this.name);
+    console.log('hello! ' + this.name);
   },
 };
 tom.sayHello();
 
-var huck = { name: "huck" };
+var huck = { name: 'huck' };
 huck.sayHello = tom.sayHello;
 huck.sayHello();
 console.log(huck);
 
-var hwan = { name: "hwan" };
+var hwan = { name: 'hwan' };
 tom.sayHello.apply(hwan);
 tom.sayHello.call(hwan);
 

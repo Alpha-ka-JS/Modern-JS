@@ -6,32 +6,32 @@
     <title>망델브로 집합</title>
     <script>
       window.onload = function () {
-        var canvas = document.getElementById("mycanvas");
-        var ctx = canvas.getContext("2d");
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext('2d');
         var width = canvas.width;
         var height = canvas.height;
         var xc = -0.6;
         var yc = 0;
         draw();
-        document.getElementById("button").onclick = draw;
-        document.getElementById("mycanvas").onclick = function (event) {
+        document.getElementById('button').onclick = draw;
+        document.getElementById('mycanvas').onclick = function (event) {
           var ix = event.offsetX;
           var iy = event.offsetY;
-          var mag = parseFloat(document.getElementById("magnification").value);
+          var mag = parseFloat(document.getElementById('magnification').value);
           xc += ((2 * ix) / width - 1) / mag;
           yc += (2 * iy - height) / mag / width;
           draw();
         };
         function draw() {
-          var mag = document.getElementById("magnification").value;
-          var maxit = document.getElementById("maxit").value;
+          var mag = document.getElementById('magnification').value;
+          var maxit = document.getElementById('maxit').value;
           displayCenter(xc, yc);
           mandelbrot(ctx, xc, yc, mag, maxit);
         }
       };
       function displayCenter(xc, yc) {
-        document.getElementById("xc").innerHTML = xc.toFixed(3);
-        document.getElementById("yc").innerHTML = yc.toFixed(3);
+        document.getElementById('xc').innerHTML = xc.toFixed(3);
+        document.getElementById('yc').innerHTML = yc.toFixed(3);
       }
       function mandelbrot(c, xc, yc, mag, maxit) {
         var w = c.canvas.width;
@@ -44,11 +44,11 @@
         var dx = (xmax - xmin) / w;
         var dy = (ymax - ymin) / h;
         var color = [];
-        color[0] = "black";
+        color[0] = 'black';
         var L = 255,
           dL = 255 / maxit;
         for (var i = maxit; i > 0; i--) {
-          color[i] = "rgb(255," + Math.floor(L) + ",255)";
+          color[i] = 'rgb(255,' + Math.floor(L) + ',255)';
           L -= dL;
         }
         for (var i = 0; i < w; i++) {

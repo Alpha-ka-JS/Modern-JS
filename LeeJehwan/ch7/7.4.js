@@ -5,7 +5,7 @@ loop: for (var i = 0; i < a.length; i++) {
     if (a[i] == b[j]) break loop;
   }
 }
-console.log("a[" + i + "] = b[" + j + "]");
+console.log('a[' + i + '] = b[' + j + ']');
 
 var a = [2, 5, -1, 7, -3, 6, 9];
 for (var i = 0, sum = 0; i < a.length; i++) {
@@ -29,7 +29,7 @@ mainloop: for (var i = 0; i < a.length; i++) {
     average += a[i][j];
   }
   average /= a[i].length;
-  console.log("i = " + i + " : 평균값 = " + average);
+  console.log('i = ' + i + ' : 평균값 = ' + average);
   if (max < average) max = average;
 }
-console.log("최대 평균값 =" + max);
+console.log('최대 평균값 =' + max);

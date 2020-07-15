@@ -6,8 +6,8 @@
     <title>Canvas의 기본2</title>
     <script>
       window.onload = function () {
-        var canvas = document.getElementById("mycanvas");
-        var ctx = canvas.getContext("2d");
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext('2d');
         ctx.beginPath();
         ctx.moveTo(60, 10);
         ctx.lineTo(110, 100);
@@ -29,45 +29,17 @@
         ctx.stroke();
 
         ctx.beginPath();
-        ctx.arc(
-          200,
-          200,
-          80,
-          (30 * Math.PI) / 180,
-          (120 * Math.PI) / 180,
-          false
-        );
+        ctx.arc(200, 200, 80, (30 * Math.PI) / 180, (120 * Math.PI) / 180, false);
         ctx.stroke();
         ctx.beginPath();
-        ctx.arc(
-          200,
-          200,
-          80,
-          (30 * Math.PI) / 180,
-          (120 * Math.PI) / 180,
-          true
-        );
+        ctx.arc(200, 200, 80, (30 * Math.PI) / 180, (120 * Math.PI) / 180, true);
         ctx.stroke();
 
         ctx.beginPath();
-        ctx.arc(
-          400,
-          200,
-          80,
-          (30 * Math.PI) / 180,
-          (120 * Math.PI) / 180,
-          false
-        );
+        ctx.arc(400, 200, 80, (30 * Math.PI) / 180, (120 * Math.PI) / 180, false);
         ctx.fill();
         ctx.beginPath();
-        ctx.arc(
-          400,
-          200,
-          80,
-          (30 * Math.PI) / 180,
-          (120 * Math.PI) / 180,
-          true
-        );
+        ctx.arc(400, 200, 80, (30 * Math.PI) / 180, (120 * Math.PI) / 180, true);
         ctx.fill();
 
         ctx.beginPath();
@@ -96,13 +68,13 @@
         strokeRoundedRect(ctx, 130, 310, 100, 80, 30);
 
         ctx.lineWidth = 10;
-        ctx.strokeStyle = "red";
-        ctx.fillStyle = "blue";
+        ctx.strokeStyle = 'red';
+        ctx.fillStyle = 'blue';
         ctx.strokeRect(250, 310, 100, 80);
         ctx.fillRect(370, 310, 100, 80);
 
-        ctx.strokeStyle = "black";
-        ctx.fillStyle = "black";
+        ctx.strokeStyle = 'black';
+        ctx.fillStyle = 'black';
         ctx.lineWidth = 2;
         ctx.strokeRect(490, 210, 100, 80);
         ctx.lineWidth = 10;

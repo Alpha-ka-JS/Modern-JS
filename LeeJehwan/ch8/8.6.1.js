@@ -48,7 +48,7 @@ function Person(name, age) {
   };
 }
 
-var person = Person("Tom", 18);
+var person = Person('Tom', 18);
 console.log(person.getName());
 console.log(person.getAge());
 person.setAge(19);

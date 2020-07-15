@@ -40,7 +40,7 @@ var f = function () {
   console.log(this.name);
 };
 var g = () => console.log(this.name);
-var tom = { name: "tom" };
+var tom = { name: 'tom' };
 f.call(tom);
 g.call(tom);
 
@@ -103,7 +103,7 @@ function makeIterator(array) {
   };
 }
 
-var iter = makeIterator(["A", "B", "C"]);
+var iter = makeIterator(['A', 'B', 'C']);
 console.log(iter);
 console.log(iter.next());
 console.log(iter.next());

@@ -7,5 +7,5 @@ function fact(n) {
 }
 // i 값을 1에서 9까지 1씩 증가시키면서 i의 팩토리얼을 콘솔에 출력한다
 for (var i = 1; i < 10; i++) {
-  console.log(i + "!= " + fact(i));
+  console.log(i + '!= ' + fact(i));
 }

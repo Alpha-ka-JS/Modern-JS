@@ -29,23 +29,23 @@ function* idMaker() {
     try {
       yield count++;
     } catch (e) {
-      console.log("오류가 발생했습니다.");
+      console.log('오류가 발생했습니다.');
     }
   }
 }
 var iter = idMaker();
 console.log(iter.next());
 console.log(iter.next());
-iter.throw(new Error("오류"));
+iter.throw(new Error('오류'));
 
 function* f() {
-  yield "X";
-  yield "Y";
+  yield 'X';
+  yield 'Y';
 }
 function* g() {
   yield 0;
   yield* [2, 4];
-  yield* "AB";
+  yield* 'AB';
   yield* f();
 }
 var iter = g();
@@ -65,12 +65,12 @@ function htmlEscape(strings, ...values) {
   return result;
   function escape(s) {
     return s
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/'/g, "&#039;")
-      .replace(/"/g, "&quot;")
-      .replace(/`/g, "&#096;");
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/'/g, '&#039;')
+      .replace(/"/g, '&quot;')
+      .replace(/`/g, '&#096;');
   }
 }
 var userinput = "<script>alter('test');</script>";
