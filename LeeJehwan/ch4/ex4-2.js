@@ -15,7 +15,7 @@ var d = dist(p1, p2);
 console.log(d);
 
 var bark = function () {
-  console.log("Bow-wow");
+  console.log('Bow-wow');
 };
 bark();
 console.log(bark());
@@ -38,7 +38,7 @@ function add1(x) {
 }
 var a = 3;
 var b = add1(a);
-console.log("a = " + a + ", b = ", b);
+console.log('a = ' + a + ', b = ', b);
 
 function add1(p) {
   p.x += 1;
@@ -72,13 +72,13 @@ var parameters = {
   vx: 10,
   vy: 15,
   radius: 5,
-  color: "blue",
+  color: 'blue',
 };
 setBallProperties(parameters);
 
-var a = "global";
+var a = 'global';
 function f() {
-  var a = "local";
+  var a = 'local';
   console.log(a);
   return a;
 }
@@ -87,14 +87,14 @@ console.log(a);
 
 function f2() {
   console.log(a);
-  var a = "local";
+  var a = 'local';
   console.log(a);
   return a;
 }
 f2();
 
 for (var j = 0; j < 10; j++) {}
-console.log("after loop j is ", j);
+console.log('after loop j is ', j);
 
 for (let i = 0; i < 10; i++) {}
 // error console.log('after loop j is ', i);

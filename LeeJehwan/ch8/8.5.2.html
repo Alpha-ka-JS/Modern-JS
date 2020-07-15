@@ -10,12 +10,12 @@
       console.log(window.a);
       function norm(x) {}
       console.log(window.norm);
-      console.log(Object.getOwnPropertyDescriptor(window, "a"));
+      console.log(Object.getOwnPropertyDescriptor(window, 'a'));
       delete a;
       console.log(a);
 
       b = { x: 1, y: 2 };
-      console.log(Object.getOwnPropertyDescriptor(window, "b"));
+      console.log(Object.getOwnPropertyDescriptor(window, 'b'));
       delete b;
       // console.log(b); // error
     </script>

@@ -6,7 +6,7 @@
     <title>반복문 안에서 클로저 만들기</title>
     <script>
       window.onload = function () {
-        var elm = document.getElementsByTagName("input");
+        var elm = document.getElementsByTagName('input');
         for (var i = 0; i < elm.length; i++) {
           (function (_i) {
             elm[_i].onclick = function () {

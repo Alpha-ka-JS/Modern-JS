@@ -5,13 +5,13 @@ var x = (function fact(n) {
 console.log(x);
 
 +(function () {
-  console.log("hi");
+  console.log('hi');
 })();
 
 (function () {
-  console.log("hi2");
+  console.log('hi2');
 })();
 
 (function () {
-  console.log("hi3");
+  console.log('hi3');
 })();

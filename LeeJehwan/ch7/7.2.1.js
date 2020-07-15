@@ -1,13 +1,13 @@
 var name = undefined;
 if (!name) {
-  name = "";
-  console.log("이름을 입력하십시오");
+  name = '';
+  console.log('이름을 입력하십시오');
 }
 var x = 10;
 if (x >= 0) {
-  console.log("positive or zero");
+  console.log('positive or zero');
 } else {
-  console.log("Negative");
+  console.log('Negative');
 }
 
 function isLeapYear(year) {

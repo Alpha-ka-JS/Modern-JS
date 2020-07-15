@@ -1,19 +1,19 @@
-digits = "";
+digits = '';
 for (var i = 0; i < 10; i++) {
   digits += i;
 }
 console.log(digits);
 
-randomChars = "";
+randomChars = '';
 for (var i = 0; i < 8; i++) {
   randomChars += String.fromCharCode(
-    Math.floor(Math.random() * 26) + "a".charCodeAt(0)
+    Math.floor(Math.random() * 26) + 'a'.charCodeAt(0)
   );
 }
 console.log(randomChars);
 
 function joinStrings(n, f) {
-  var s = "";
+  var s = '';
   for (var i = 0; i < n; i++) {
     s += f(i);
   }
@@ -25,7 +25,7 @@ var digits = joinStrings(10, function (i) {
 });
 var randomChars = joinStrings(8, function (i) {
   return String.fromCharCode(
-    Math.floor(Math.random() * 26) + "a".charCodeAt(0)
+    Math.floor(Math.random() * 26) + 'a'.charCodeAt(0)
   );
 });
 console.log(digits);
@@ -52,7 +52,7 @@ var N = 1000;
 for (var i = 2; i <= N; i++) isPrime_memo(i);
 
 for (var i = 2; i + 2 <= N; i++) {
-  if (isPrime_memo(i) && isPrime_memo(i + 2)) console.log(i + "," + (i + 2));
+  if (isPrime_memo(i) && isPrime_memo(i + 2)) console.log(i + ',' + (i + 2));
 }
 
 var fibonacci = memorize(function (n) {
@@ -60,14 +60,14 @@ var fibonacci = memorize(function (n) {
   return fibonacci(n - 1) + fibonacci(n - 2);
 });
 for (var i = 0; i <= 20; i++) {
-  console.log((" " + i).slice(-2) + ":" + fibonacci(i));
+  console.log((' ' + i).slice(-2) + ':' + fibonacci(i));
 }
 
 function memo2(f) {
   var cache = {};
   return function () {
-    var key = "";
-    for (var i = 0; i < arguments.length; i++) key += arguments[i] + ",";
+    var key = '';
+    for (var i = 0; i < arguments.length; i++) key += arguments[i] + ',';
     if (cache[key] == undefined) cache[key] = f.apply(null, arguments);
     return cache[key];
   };
@@ -78,7 +78,7 @@ var fibonacci2 = memo2(function (n) {
   return fibonacci2(n - 1) + fibonacci2(n - 2);
 });
 for (var i = 0; i <= 20; i++) {
-  console.log((" " + i).slice(-2) + ":" + fibonacci2(i));
+  console.log((' ' + i).slice(-2) + ':' + fibonacci2(i));
 }
 
 var isPrime_memo2 = memo2(isPrime);
@@ -86,7 +86,7 @@ var N = 1000;
 for (var i = 2; i <= N; i++) isPrime_memo2(i);
 
 for (var i = 2; i + 2 <= N; i++) {
-  if (isPrime_memo2(i) && isPrime_memo2(i + 2)) console.log(i + "," + (i + 2));
+  if (isPrime_memo2(i) && isPrime_memo2(i + 2)) console.log(i + ',' + (i + 2));
 }
 
 function compose(f, g) {

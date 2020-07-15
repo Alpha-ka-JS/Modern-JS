@@ -8,7 +8,7 @@ var sq1 = function (x) {
 };
 console.log(sq1(2));
 
-var sq2 = new Function("x", "return x*x");
+var sq2 = new Function('x', 'return x*x');
 console.log(sq2(2));
 
 var sq3 = (x) => x * x;
@@ -18,7 +18,7 @@ function norm(x) {
   var sum2 = sumSquare();
   return Math.sqrt(sum2);
   function sumSquare() {
-    sum = 0;
+    var sum = 0;
     for (var i = 0; i < x.length; i++) {
       sum += x[i] * x[i];
     }

@@ -1,9 +1,9 @@
 console.log(7 / 2);
 console.log(15 % 4);
 console.log(5 % 1.5);
-console.log(1 + "2month");
+console.log(1 + '2month');
 console.log(0 / 0);
-console.log("one * 1");
+console.log('one * 1');
 console.log(true + true);
 console.log(1 + null);
 console.log(1 + undefined);

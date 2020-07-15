@@ -1,0 +1,29 @@
+{
+  "name": "modern-js",
+  "version": "1.0.0",
+  "description": "![GitHub contributors](https://img.shields.io/github/contributors/Alpha-ka-js/Modern-jS?&color=brightgreen)\r ![<Languages>](https://img.shields.io/github/languages/count/Alpha-ka-JS/Modern-JS?&color=brightgreen)\r ![<TopLanguages>](https://img.shields.io/github/languages/top/Alpha-ka-JS/Modern-JS?&color=brightgreen)\r ![<repoSize>](https://img.shields.io/github/repo-size/Alpha-ka-JS/Modern-JS)\r ![<CommitActivity>](https://img.shields.io/github/commit-activity/m/Alpha-ka-JS/Modern-JS)\r ![<LastCommit>](https://img.shields.io/github/last-commit/Alpha-ka-JS/Modern-JS)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "jehwan-lint": "eslint --ext .js,.html LeeJehwan/",
+    "jehwan-lint-fix": "eslint --ext .js,.html LeeJehwan/ --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeeJehwan/Modern-JS.git"
+  },
+  "author": "Lee Jehwan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeeJehwan/Modern-JS/issues"
+  },
+  "homepage": "https://github.com/LeeJehwan/Modern-JS#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.4.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-html": "^6.0.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "2.0.5"
+  }
+}

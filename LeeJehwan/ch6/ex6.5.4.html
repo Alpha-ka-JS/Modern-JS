@@ -11,8 +11,8 @@
     </style>
     <script>
       window.onload = function () {
-        var canvas = document.getElementById("mycanvas");
-        var ctx = canvas.getContext("2d");
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext('2d');
         var img = new Image();
         img.onload = function () {
           ctx.drawImage(img, 0, 0);
@@ -20,24 +20,24 @@
           imageDate.getRGBA = function (m, n, i) {
             return this.date[this.width * 4 * n + 4 * m + i];
           };
-          var rgb = document.getElementById("rgb");
+          var rgb = document.getElementById('rgb');
           canvas.onclick = function (event) {
             var x = event.offsetX;
             var y = event.offsetY;
             rgb.innerHTML =
-              "R: " +
+              'R: ' +
               to3digit(imageDate.getRGBA(x, y, 0)) +
-              "G: " +
+              'G: ' +
               to3digit(imageDate.getRGBA(x, y, 1)) +
-              "B: " +
+              'B: ' +
               to3digit(imageDate.getRGBA(x, y, 2));
             console.log(rgb);
           };
         };
-        img.src = "./cat.jpg";
+        img.src = './cat.jpg';
       };
       function to3digit(n) {
-        return ("000" + n).slice(-3);
+        return ('000' + n).slice(-3);
       }
     </script>
   </head>

@@ -27,6 +27,6 @@ console.log(now.toLocaleTimeString());
 console.log(now.getUTCHours());
 console.log(now.toUTCString());
 
-var square = new Function("x", "return x * x");
+var square = new Function('x', 'return x * x');
 console.log(square);
 console.log(square(5));
