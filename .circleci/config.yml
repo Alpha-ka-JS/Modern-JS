@@ -62,11 +62,20 @@ workflows:
     jobs:
       - build
       - lint_jehwan:
+          filters:
+            branches:
+              only: /LeeJehwan:.*/
           requires:
             - build
       - lint_eunjoung:
+          filters:
+            branches:
+              only: /soleileun:.*/
           requires:
             - build
       - lint_sungwon:
+          filters:
+            branches:
+              only: /sungwon2054:.*/
           requires:
             - build
