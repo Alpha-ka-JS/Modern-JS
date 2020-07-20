@@ -62,20 +62,14 @@ workflows:
     jobs:
       - build
       - lint_jehwan:
-          filters:
-            branches:
-              only: /LeeJehwan:.*/
+          owner: LeeJehwan
           requires:
             - build
       - lint_eunjoung:
-          filters:
-            branches:
-              only: /soleileun:.*/
+          owner: soleileun
           requires:
             - build
       - lint_sungwon:
-          filters:
-            branches:
-              only: /sungwon2054:.*/
+          owner: sungwon2054
           requires:
             - build
