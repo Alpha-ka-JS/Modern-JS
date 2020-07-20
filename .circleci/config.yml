@@ -65,6 +65,7 @@ workflows:
           pre-steps:
             - run: 
                 command: |
+                  echo $CIRCLE_PR_USERNAME
                   if [ "$CIRCLE_PR_USERNAME" = "LeeJehwan" ]; then
                     circleci-agent step halt
                   fi
