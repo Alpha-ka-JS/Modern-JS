@@ -62,14 +62,20 @@ workflows:
     jobs:
       - build
       - lint_jehwan:
-          owner: LeeJehwan
+          when: 
+            condition:
+              equal: [ $CIRCLE_PR_USERNAME, LeeJehwan ]
           requires:
             - build
       - lint_eunjoung:
-          owner: soleileun
+          when: 
+            condition:
+              equal: [ $CIRCLE_PR_USERNAME, soleileun ]
           requires:
             - build
       - lint_sungwon:
-          owner: sungwon2054
+          when: 
+            condition:
+              equal: [ $CIRCLE_PR_USERNAME, sungwon2054 ]
           requires:
             - build
