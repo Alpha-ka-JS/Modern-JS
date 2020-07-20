@@ -62,20 +62,29 @@ workflows:
     jobs:
       - build
       - lint_jehwan:
-          when: 
-            condition:
-              equal: [ $CIRCLE_PR_USERNAME, LeeJehwan ]
+          pre-steps:
+            - run: 
+                command: |
+                  if [ "$CIRCLE_PR_USERNAME" = "LeeJehwan" ]; then
+                    circleci-agent step halt
+                  fi
           requires:
             - build
       - lint_eunjoung:
-          when: 
-            condition:
-              equal: [ $CIRCLE_PR_USERNAME, soleileun ]
+          pre-steps:
+            - run: 
+                command: |
+                  if [ "$CIRCLE_PR_USERNAME" = "soleileun" ]; then
+                    circleci-agent step halt
+                  fi
           requires:
             - build
       - lint_sungwon:
-          when: 
-            condition:
-              equal: [ $CIRCLE_PR_USERNAME, sungwon2054 ]
+          pre-steps:
+            - run: 
+                command: |
+                  if [ "$CIRCLE_PR_USERNAME" = "sungwon2054" ]; then
+                    circleci-agent step halt
+                  fi
           requires:
             - build
