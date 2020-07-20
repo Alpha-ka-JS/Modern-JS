@@ -65,9 +65,9 @@ workflows:
           pre-steps:
             - run: 
                 command: |
-                  echo $CIRCLE_PR_USERNAME
-                  if [ "$CIRCLE_PR_USERNAME" = "LeeJehwan" ]; then
-                    circleci-agent step halt
+                  echo ${CIRCLE_PR_USERNAME}
+                  if [ "$CIRCLE_PR_USERNAME" -ne "LeeJehwan" ]; then
+                    circleci step halt
                   fi
           requires:
             - build
@@ -75,8 +75,8 @@ workflows:
           pre-steps:
             - run: 
                 command: |
-                  if [ "$CIRCLE_PR_USERNAME" = "soleileun" ]; then
-                    circleci-agent step halt
+                  if [ "$CIRCLE_PR_USERNAME" -ne "soleileun" ]; then
+                    circleci step halt
                   fi
           requires:
             - build
@@ -84,8 +84,8 @@ workflows:
           pre-steps:
             - run: 
                 command: |
-                  if [ "$CIRCLE_PR_USERNAME" = "sungwon2054" ]; then
-                    circleci-agent step halt
+                  if [ "$CIRCLE_PR_USERNAME" -ne "sungwon2054" ]; then
+                    circleci step halt
                   fi
           requires:
             - build
