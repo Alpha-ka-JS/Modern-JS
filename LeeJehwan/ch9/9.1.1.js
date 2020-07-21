@@ -33,7 +33,7 @@ console.log(obj.prop);
 obj.prop = 'instance value';
 console.log(obj.prop);
 console.log(F.prototype.prop);
-// F.prop.prop = 'new value';
+// F.prototype.prop = 'new value';
 // console.log(F.prototype.prop); // TypeError: Cannot set property 'prop' of undefined
 
 function Circle(center, radius) {
