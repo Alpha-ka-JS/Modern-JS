@@ -30,29 +30,16 @@ jobs:
       # Reuse the workspace from the build job
       - attach_workspace:
           at: .
-      - run: |
-          bash ./.circleci/check.sh LeeJehwan ${CIRCLE_PR_USERNAME}
-          npm run jehwan-lint
       - run: 
-          name: "Setup custom environment variables"
-          command: echo 'export MY_ENV_VAR="FOO"' >> $BASH_ENV
+          name: "Who am I?"
+          command: echo ${CIRCLE_PR_USERNAME}
       - run: # print the name of the branch we're on
-          name: "What branch am I on?"
-          command: echo ${CIRCLE_BRANCH}
-      # Run another step, the same as above; note that you can
-      # invoke environment variable without curly braces.
+          name: "check"
+          command: bash ./.circleci/check.sh LeeJehwan ${CIRCLE_PR_USERNAME}
       - run:
-          name: "What branch am I on now?"
-          command: echo $CIRCLE_BRANCH
-      - run:
-          name: "What was my custom environment variable?"
-          command: echo ${MY_ENV_VAR}
-      - run:
-          name: "Print an env var stored in the Project"
-          command: echo ${PROJECT_ENV_VAR}
-      - run:
-          name: "Print an env var stored in a Context"
-          command: echo ${CONTEXT_ENV_VAR}
+          name: "lint test"
+          command: npm run jehwan-lint
+
   lint_eunjoung:
     docker:
       # The primary container is an instance of the first image listed. The job's commands run in this container.
@@ -61,12 +48,15 @@ jobs:
       # Reuse the workspace from the build job
       - attach_workspace:
           at: .
-      - run: |
-          echo ${CIRCLE_PR_USERNAME}
-          echo $CIRCLE_PR_USERNAME
-          echo '$CIRCLE_PR_USERNAME'
-          bash ./.circleci/check.sh soleileun ${CIRCLE_PR_USERNAME}
-          npm run eunjoung-lint
+      - run: 
+          name: "Who am I?"
+          command: echo ${CIRCLE_PR_USERNAME}
+      - run: # print the name of the branch we're on
+          name: "check"
+          command: bash ./.circleci/check.sh soleileun ${CIRCLE_PR_USERNAME}
+      - run:
+          name: "lint test"
+          command: npm run eunjoung-lint
   lint_sungwon:
     docker:
       # The primary container is an instance of the first image listed. The job's commands run in this container.
@@ -75,9 +65,15 @@ jobs:
       # Reuse the workspace from the build job
       - attach_workspace:
           at: .
-      - run: |
-          bash ./.circleci/check.sh sungwon2054 ${CIRCLE_PR_USERNAME}
-          npm run sungwon-lint
+      - run: 
+          name: "Who am I?"
+          command: echo ${CIRCLE_PR_USERNAME}
+      - run: # print the name of the branch we're on
+          name: "check"
+          command: bash ./.circleci/check.sh sungwon2054 ${CIRCLE_PR_USERNAME}
+      - run:
+          name: "lint test"
+          command: npm run sungwon-lint
 
 workflows:
   version: 2
