@@ -32,7 +32,9 @@ jobs:
           at: .
       - run:
           name: Lint
-          command: npm run jehwan-lint
+          command: |
+            bash check.sh LeeJehwan
+            npm run jehwan-lint
   lint_eunjoung:
     docker:
       # The primary container is an instance of the first image listed. The job's commands run in this container.
@@ -43,7 +45,9 @@ jobs:
           at: .
       - run:
           name: Lint
-          command: npm run eunjoung-lint
+          command:  |
+            bash check.sh soleileun
+            npm run eunjoung-lint
   lint_sungwon:
     docker:
       # The primary container is an instance of the first image listed. The job's commands run in this container.
@@ -54,7 +58,9 @@ jobs:
           at: .
       - run:
           name: Lint
-          command: npm run sungwon-lint
+          command: |
+            bash check.sh sungwon2054
+            npm run sungwon-lint
 
 workflows:
   version: 2
@@ -62,30 +68,11 @@ workflows:
     jobs:
       - build
       - lint_jehwan:
-          pre-steps:
-            - run: 
-                command: |
-                  echo ${CIRCLE_PR_USERNAME}
-                  if [ "$CIRCLE_PR_USERNAME" -ne "LeeJehwan" ]; then
-                    circleci step halt
-                  fi
           requires:
             - build
       - lint_eunjoung:
-          pre-steps:
-            - run: 
-                command: |
-                  if [ "$CIRCLE_PR_USERNAME" -ne "soleileun" ]; then
-                    circleci step halt
-                  fi
           requires:
             - build
       - lint_sungwon:
-          pre-steps:
-            - run: 
-                command: |
-                  if [ "$CIRCLE_PR_USERNAME" -ne "sungwon2054" ]; then
-                    circleci step halt
-                  fi
           requires:
             - build
