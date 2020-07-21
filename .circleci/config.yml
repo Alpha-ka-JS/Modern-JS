@@ -30,12 +30,9 @@ jobs:
       # Reuse the workspace from the build job
       - attach_workspace:
           at: .
-      - run:
-          name: Lint
-          command: |
-            chmod +x ./.circleci/check.sh
-            ./.circleci/check.sh LeeJehwan ${CIRCLE_PR_USERNAME}
-            npm run jehwan-lint
+      - run: |
+          bash ./.circleci/check.sh LeeJehwan ${CIRCLE_PR_USERNAME}
+          npm run jehwan-lint
   lint_eunjoung:
     docker:
       # The primary container is an instance of the first image listed. The job's commands run in this container.
@@ -44,13 +41,12 @@ jobs:
       # Reuse the workspace from the build job
       - attach_workspace:
           at: .
-      - run:
-          name: Lint
-          command:  |
-            chmod +x ./.circleci/check.sh
-            echo ${CIRCLE_PR_USERNAME}
-            ./.circleci/check.sh soleileun ${CIRCLE_PR_USERNAME}
-            npm run eunjoung-lint
+      - run: |
+          echo ${CIRCLE_PR_USERNAME}
+          echo $CIRCLE_PR_USERNAME
+          echo '$CIRCLE_PR_USERNAME'
+          bash ./.circleci/check.sh soleileun ${CIRCLE_PR_USERNAME}
+          npm run eunjoung-lint
   lint_sungwon:
     docker:
       # The primary container is an instance of the first image listed. The job's commands run in this container.
@@ -59,12 +55,9 @@ jobs:
       # Reuse the workspace from the build job
       - attach_workspace:
           at: .
-      - run:
-          name: Lint
-          command: |
-            chmod +x ./.circleci/check.sh
-            ./.circleci/check.sh sungwon2054 ${CIRCLE_PR_USERNAME}
-            npm run sungwon-lint
+      - run: |
+          bash ./.circleci/check.sh sungwon2054 ${CIRCLE_PR_USERNAME}
+          npm run sungwon-lint
 
 workflows:
   version: 2
