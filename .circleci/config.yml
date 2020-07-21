@@ -33,7 +33,7 @@ jobs:
       - run:
           name: Lint
           command: |
-            bash check.sh LeeJehwan
+            bash ./.circleci/check.sh LeeJehwan
             npm run jehwan-lint
   lint_eunjoung:
     docker:
@@ -46,7 +46,7 @@ jobs:
       - run:
           name: Lint
           command:  |
-            bash check.sh soleileun
+            bash ./.circleci/check.sh soleileun
             npm run eunjoung-lint
   lint_sungwon:
     docker:
@@ -59,7 +59,7 @@ jobs:
       - run:
           name: Lint
           command: |
-            bash check.sh sungwon2054
+            bash ./.circleci/check.sh sungwon2054
             npm run sungwon-lint
 
 workflows:
