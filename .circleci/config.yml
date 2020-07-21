@@ -30,10 +30,7 @@ jobs:
       # Reuse the workspace from the build job
       - attach_workspace:
           at: .
-      - run: 
-          name: "Who am I?"
-          command: echo ${CIRCLE_PR_USERNAME}
-      - run: # print the name of the branch we're on
+      - run:
           name: "check"
           command: bash ./.circleci/check.sh LeeJehwan ${CIRCLE_PR_USERNAME}
       - run:
@@ -48,10 +45,7 @@ jobs:
       # Reuse the workspace from the build job
       - attach_workspace:
           at: .
-      - run: 
-          name: "Who am I?"
-          command: echo ${CIRCLE_PR_USERNAME}
-      - run: # print the name of the branch we're on
+      - run:
           name: "check"
           command: bash ./.circleci/check.sh soleileun ${CIRCLE_PR_USERNAME}
       - run:
@@ -66,9 +60,6 @@ jobs:
       - attach_workspace:
           at: .
       - run: 
-          name: "Who am I?"
-          command: echo ${CIRCLE_PR_USERNAME}
-      - run: # print the name of the branch we're on
           name: "check"
           command: bash ./.circleci/check.sh sungwon2054 ${CIRCLE_PR_USERNAME}
       - run:
