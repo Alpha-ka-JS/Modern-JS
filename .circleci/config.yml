@@ -33,7 +33,7 @@ jobs:
       - run:
           name: Lint
           command: |
-            bash ./.circleci/check.sh LeeJehwan ${CIRCLE_PR_USERNAME}
+            ./.circleci/check.sh LeeJehwan ${CIRCLE_PR_USERNAME}
             npm run jehwan-lint
   lint_eunjoung:
     docker:
@@ -47,7 +47,7 @@ jobs:
           name: Lint
           command:  |
             echo ${CIRCLE_PR_USERNAME}
-            bash ./.circleci/check.sh soleileun ${CIRCLE_PR_USERNAME}
+            ./.circleci/check.sh soleileun ${CIRCLE_PR_USERNAME}
             npm run eunjoung-lint
   lint_sungwon:
     docker:
@@ -60,7 +60,7 @@ jobs:
       - run:
           name: Lint
           command: |
-            bash ./.circleci/check.sh sungwon2054 ${CIRCLE_PR_USERNAME}
+            ./.circleci/check.sh sungwon2054 ${CIRCLE_PR_USERNAME}
             npm run sungwon-lint
 
 workflows:
