@@ -33,6 +33,7 @@ jobs:
       - run:
           name: Lint
           command: |
+            chmod +x ./.circleci/check.sh
             ./.circleci/check.sh LeeJehwan ${CIRCLE_PR_USERNAME}
             npm run jehwan-lint
   lint_eunjoung:
@@ -46,6 +47,7 @@ jobs:
       - run:
           name: Lint
           command:  |
+            chmod +x ./.circleci/check.sh
             echo ${CIRCLE_PR_USERNAME}
             ./.circleci/check.sh soleileun ${CIRCLE_PR_USERNAME}
             npm run eunjoung-lint
@@ -60,6 +62,7 @@ jobs:
       - run:
           name: Lint
           command: |
+            chmod +x ./.circleci/check.sh
             ./.circleci/check.sh sungwon2054 ${CIRCLE_PR_USERNAME}
             npm run sungwon-lint
 
