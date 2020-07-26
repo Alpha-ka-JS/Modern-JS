@@ -1,18 +1,18 @@
 //생성자로 객체 생성하기
 //생성자를 사용하면 이름이 같은 메서드와 프로퍼티를 가진 객체 여러개를 효율적으로 생성 가능
 
-var card = new Card("heart", "A");
+var card = new Card('heart', 'A');
 console.log(card); //Card { suit: 'heart', rank: 'A' }
 
 //생성자
 var card = {};
-card.suit = "heart";
-card.rank = "A";
+card.suit = 'heart';
+card.rank = 'A';
 console.log(card); //{ suit: 'heart', rank: 'A' }
 
-var card1 = new Card("하트", "A");
-var card2 = new Card("클럽", "K");
-var card3 = new Card("스페이드", "2");
+var card1 = new Card('하트', 'A');
+var card2 = new Card('클럽', 'K');
+var card3 = new Card('스페이드', '2');
 //이렇게 하면 이름은 같은데 프로퍼티값이 다르 객체 여러개를 효율적으로 생성 가능하다는 것.
 
 function Card(suit, rank) {
@@ -42,7 +42,7 @@ function Circle(center, radius) {
 
 var p = { x: 0, y: 0 };
 var c = new Circle(p, 2.0);
-console.log("넓이 : " + c.area()); //넓이 : 12.566370614359172
+console.log('넓이 : ' + c.area()); //넓이 : 12.566370614359172
 
 //내장객체 이해하기 - 내장 생성자
 //자바스크립트에 처음부터 포함된 내장 생성자
@@ -78,7 +78,7 @@ console.log(now.toUTCString()); //Sun, 28 Jun 2020 17:32:33 GMT
 
 //Function
 //함수를 생성하는 내장객체
-var square = new Function("x", "return x*x");
+var square = new Function('x', 'return x*x');
 //첫번째 인자는 x는 인수의 이름을 뜻하고
 //두번째는 함수 몸통이 작성된 부분. n개일 경우에는 쭉쓰고 마지막에 몸통을 써주면 된다.
 /*Function 생성자로 생성한 함수는 전역변수 + 자신의 지역변수만 사용가능
@@ -91,7 +91,7 @@ var square = new Function("x", "return x*x");
 //기타 내장객체 - 전역객체, JSON, Math,Reflect
 //전역객체 - 전역프로퍼티 (undefined, NaN, Infinity),생성자,전역함수, 내장객체
 //클라이언트 측 자스에서는 Window가 전역객체다.
-//console.log(window); -> Window {parent: Window, opener: null, top: Window, length: 4, frames: Window, …}
+//console.log(window); -> Window{parent: Window, opener: null, top: Window, length: 4, frames: Window,…}
 
 /*
 1. 네이티브객체 - ECMAScript 사양에 정의된 객체가 네이티브 객체  즉, 내장생성자

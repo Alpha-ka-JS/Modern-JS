@@ -41,7 +41,7 @@ f(); 이런식인데 즉시실행함수는
 
 //함수의 인수
 function f(x, y) {
-  console.log("x: " + x + " y: " + y); //x:2 , y:undefined
+  console.log('x: ' + x + ' y: ' + y); //x:2 , y:undefined
 }
 f(2);
 function multi(a, b) {
@@ -58,11 +58,11 @@ arguments[i] 값을 바꾸면 인자 값이 함께 바뀐다  <- 일반적 배�
 */
 
 function myConcat(separator) {
-  var s = "";
+  var s = '';
   for (var i = 1; i < arguments.length; i++) {
     s += arguments[i];
     if (i < arguments.length - 1) s += separator;
   }
   return s;
 }
-console.log(myConcat("/", "apple", "orange", "tomato"));
+console.log(myConcat('/', 'apple', 'orange', 'tomato'));

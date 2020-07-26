@@ -2,9 +2,9 @@
 // 어휘적범위 - 하나의 프로그램 구문만으로 유효범위를 정한다. (C,Java,JS)
 // 동적범위 - 프로그램 실행 중 유효범위를 정한다.
 
-var g = "global"; //전역변수라서 가능
+var g = 'global'; //전역변수라서 가능
 function f() {
-  var l = "local";
+  var l = 'local';
   console.log(g); //global
   return l;
 }
@@ -12,9 +12,9 @@ f();
 //console.log(l); //error, l is not defined 지역변수라서 유효범위를 벗어나서는 사용불가
 
 //하나의 변수를 공유할때 유효범위에 따른 값 변화 확인
-var g = "global";
+var g = 'global';
 function f2() {
-  var g = "local";
+  var g = 'local';
   console.log(g); //local
   return g;
 }
@@ -24,19 +24,19 @@ console.log(g); //global
 //함수안에서도 변수끌어올림 가능
 function f3() {
   console.log(h); //undefined
-  var h = "local";
+  var h = 'local';
   console.log(h); //local
   return h;
 }
 f3();
 //함수안에서 변수 선언을 생략하게되면 전역변수로 선언된다.
 function f4() {
-  k = "global";
+  k = 'global';
   console.log(k); //global
   return k;
 }
 f4();
-console.log("k : " + k); //global
+console.log('k : ' + k); //global
 
 //let 과 const -> 블록 유효범위를 갖는 변수 선언 {} 중괄호 안에서만 유효함.
 //let은 변수를 선언하고 const는 한번만 할당할 수 있는 상수 선언
@@ -46,10 +46,10 @@ let a, b, c;
 //let x = 5, -> 같은 유효범위 안에서는 이미 선언되어 못씀
 //  y = 7;
 
-let x = "outer x";
+let x = 'outer x';
 {
-  let x = "inner x";
-  let y = "inner y";
+  let x = 'inner x';
+  let y = 'inner y';
   console.log(x);
   console.log(y);
 }
