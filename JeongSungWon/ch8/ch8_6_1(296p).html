@@ -5,33 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>반복문 안에서 클로저 만들기</title>
     <script>
-        window.onload = function(){
-            var elm = document.getElementsByTagName("input");
+        window.onload = function () {
+          var elm = document.getElementsByTagName('input');
 
-            // var i 가 반복문을 돌면서 onclick을 만들었고 
-            // [입력된value].onclick이 실행될 때  
-            // function안에 console.log(i)의 i는 클로저로 외부의 i를 참조하므로 3이 출력??
-            
-            // for(var i=0; i<elm.length; i++){
-            //     elm[i].onclick = function(){
-            //         console.log(i);
-            //     };
-            // }
+          // var i 가 반복문을 돌면서 onclick을 만들었고
+          // [입력된value].onclick이 실행될 때
+          // function안에 console.log(i)의 i는 클로저로 외부의 i를 참조하므로 3이 출력??
+        
+          // for(var i=0; i<elm.length; i++){
+          //     elm[i].onclick = function(){
+          //         console.log(i);
+          //     };
+          // }
 
-            // 카운터 변수 전달
-            // for(var i=0; i<elm.length; i++)(function(_i){
-            //     elm[_i].onclick = function(){
-            //         console.log(i);
-            //     };
-            // })(i);
+          // 카운터 변수 전달
+          // for(var i=0; i<elm.length; i++)(function(_i){
+          //     elm[_i].onclick = function(){
+          //         console.log(i);
+          //     };
+          // })(i);
 
-            //let을 이용(let은 블록 유효범위)
-            for(var _i=0; _i<elm.length; _i++){
-                let i = _i;
-                elm[i].onclick = function(){
-                    console.log(i);
-                };
-            }
+          //let을 이용(let은 블록 유효범위)
+          for (var _i = 0; _i < elm.length; _i++) {
+            let i = _i;
+            elm[i].onclick = function () {
+              console.log(i);
+            };
+          }
         };
     </script>
 </head>

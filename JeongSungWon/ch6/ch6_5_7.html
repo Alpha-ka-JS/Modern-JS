@@ -8,16 +8,16 @@
         canvas{border: 2px solid gray;}
     </style>
     <script>
-        window.onload = function(){
-            var canvas = document.getElementById("mycanvas");
-            var ctx = canvas.getContext("2d");
-            var img = new Image();
-            img.onload=function(){
-                ctx.drawImage(img,0,0);
-                ctx.drawImage(img,0,0,100,100);
-                ctx.drawImage(img,20,20,40,100,100,100,100);
-            };
-            img.src="./alpaca.png";
+        window.onload = function () {
+          var canvas = document.getElementById('mycanvas');
+          var ctx = canvas.getContext('2d');
+          var img = new Image();
+          img.onload = function () {
+            ctx.drawImage(img, 0, 0);
+            ctx.drawImage(img, 0, 0, 100, 100);
+            ctx.drawImage(img, 20, 20, 40, 100, 100, 100, 100);
+          };
+          img.src = './alpaca.png';
         };
     </script>
 </head>
