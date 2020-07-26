@@ -15,27 +15,27 @@ console.log(c == a); // true
 -한쪽이 객체고 다르한쪽이 숫자 또는 문자면 객체를 toString이나 ValueOf 메서드를 사용해서 원시타입으로 변환해 비교한다.
 -위 규칙에 벗어난다면 모두 같지 않음
 */
-console.log("동일 연산자 test");
+console.log('동일 연산자 test');
 console.log(null == undefined);
-console.log(1 == "1");
-console.log("0xff" == 255);
+console.log(1 == '1');
+console.log('0xff' == 255);
 console.log(true == 1);
-console.log(true == "1");
-console.log(new String("a") == "a");
-console.log(new Number("1") == 1);
+console.log(true == '1');
+console.log(new String('a') == 'a');
+console.log(new Number('1') == 1);
 console.log([2] == 2);
 
 //일치 연산자 - 피연산자를 평가한 후에 타입을 변환하지 않은 상태의 두 값을 엄격하게 비교함.
 //타입과 값이 모두 같으면 같다 아니라면 같지 않다. NaN 만큼은 NaN을 포함한 모든 값과 같지 않다고 판단함.
-console.log("일치 연산자 test");
+console.log('일치 연산자 test');
 console.log(NaN === NaN);
 console.log(null === undefined);
-console.log(1 === "1");
-console.log("0xff" === 255);
+console.log(1 === '1');
+console.log('0xff' === 255);
 console.log(true === 1);
-console.log(true === "1");
-console.log(new String("a") === "a");
-console.log(new Number("1") === 1);
+console.log(true === '1');
+console.log(new String('a') === 'a');
+console.log(new Number('1') === 1);
 console.log([2] === 2);
 
 //논리연산자 - &&,||,!
@@ -54,7 +54,7 @@ console.log(x > 0 || y > 0); //하나만 참이어도 true
 
 var p = null;
 //p && p.name
-p = { name: "Tom", age: 18 };
+p = { name: 'Tom', age: 18 };
 console.log(p && p.name); // Tom 반환
 
 // || 여러개의 값 후보중에 null또는 undefined가 아닌 값을 선택하고자 할때 유용하게 사용된다.

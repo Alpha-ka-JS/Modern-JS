@@ -25,7 +25,7 @@ for (var a = 1; a <= n; a++) {
   for (var b = 1; b <= n; b++) {
     for (var c = 1; c <= n; c++) {
       if (a * a + b * b == c * c) {
-        console.log(a + "^2 +" + b + "^2 " + "= " + c + "^2");
+        console.log(a + '^2 +' + b + '^2 ' + '= ' + c + '^2');
       }
     }
   }
@@ -35,8 +35,8 @@ for (var a = 1; a <= n; a++) {
 var obj = { a: 1, b: 2, c: 3 };
 for (var p in obj) {
   //객체 표현식을 평가한다
-  console.log("p = " + p);
-  console.log("obj." + p + " = " + obj[p]); //값을 가져오려면 value가 아니고 [] 연산자를 사용해야한다.
+  console.log('p = ' + p);
+  console.log('obj.' + p + ' = ' + obj[p]); //값을 가져오려면 value가 아니고 [] 연산자를 사용해야한다.
 }
 
 //점프문
@@ -52,7 +52,7 @@ loop: for (var i = 0; i < a.length; i++) {
     if (a[i] == b[j]) break loop;
   }
 }
-console.log("a[" + i + "] = b[" + j + "]"); //a[2] = b[2]
+console.log('a[' + i + '] = b[' + j + ']'); //a[2] = b[2]
 
 //continue문
 
@@ -78,7 +78,7 @@ mainloop: for (var i = 0; i < a.length; i++) {
     average += a[i][j];
   }
   average /= a[i].length;
-  console.log("i = " + i + "평균값 = " + average);
+  console.log('i = ' + i + '평균값 = ' + average);
   if (max < average) max = average;
 }
-console.log("최대 평균값 = " + max);
+console.log('최대 평균값 = ' + max);
