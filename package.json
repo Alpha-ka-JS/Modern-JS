@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "jehwan-lint": "eslint --ext .js,.html LeeJehwan/",
-    "jehwan-lint-fix": "eslint --ext .js,.html LeeJehwan/ --fix"
+    "jehwan-lint-fix": "eslint --ext .js,.html LeeJehwan/ --fix",
+    "sungwon-lint": "eslint --ext .js,.html JeongSungWon",
+    "sungwon-lint-fix": "eslint --ext .js,.html JeongSungWon/ --fix"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,7 @@
   "homepage": "https://github.com/LeeJehwan/Modern-JS#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.4.0",
+    "eslint": "^7.5.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-html": "^6.0.2",
     "eslint-plugin-prettier": "^3.1.4",

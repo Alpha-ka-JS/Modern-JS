@@ -4,7 +4,7 @@ Js, Pyhton -> 동적타입 = duck typing
 */
 var pi = 3.14;
 console.log(pi);
-pi = "원주율"
+pi = '원주율';
 console.log(pi);
 
 /*
@@ -17,7 +17,7 @@ console.log(pi);
     ex) 배열, 함수, 정규표현식
 */
 
-'3.14'
+('3.14');
 
 /*
 undefined = 할당 X

@@ -1,5 +1,5 @@
 //4.4.2 Date 생성자
-console.log("Date 생성자");
+console.log('Date 생성자');
 
 var now = new Date();
 console.log(now);
@@ -12,6 +12,6 @@ var start = new Date();
 var end = new Date();
 var lapsed = end - start;
 
-console.log(now.get)
+console.log(now.get);
 
-var square = new Function("X", "return x * x");
+var square = new Function('X', 'return x * x');
