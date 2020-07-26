@@ -1,5 +1,4 @@
-const { check } = require('prettier');
-
+//9.2.5 프로토타입 객체의 프로퍼티
 function F() {
   console.log(F.prototype.constructor);
 }
