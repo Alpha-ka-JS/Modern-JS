@@ -17,7 +17,7 @@ console.log(d); //5
 
 //인수를 받지 않는 경우
 var bark = function () {
-  console.log("Bow-wow");
+  console.log('Bow-wow');
 };
 bark();
 //함수의 끌어올림도 가능하다. 함수를 정의하기전에 실행하는 코드를 작성해도 문제없이 동작한다.
@@ -28,7 +28,7 @@ function add1(x) {
 }
 var a = 3;
 var b = add1(a); // 인수로 넘긴 a 가 변하지 않음. -> 복사본이 전달되기때문
-console.log(a + " , " + b);
+console.log(a + ' , ' + b);
 
 //객체를 넘긴 경우에는 참조값을 넘긴다.
 //참조전달 ->원래의 객체 값을 변경할 수 있다.
@@ -39,7 +39,7 @@ function add2(p) {
 }
 var a = { x: 3, y: 4 };
 var b = add2(a);
-console.log(a.x + " , " + b.y); //4,5
+console.log(a.x + ' , ' + b.y); //4,5
 
 //함수의 인수를 여러개를 전달하는 경우 순서를 착각할수있고,
 // 인수 개수가 바뀌면 호출방법이 바뀌므로 프로그램 전체를 수정해야한다.
@@ -53,7 +53,7 @@ var parameters = {
 };
 
 function setParameters(p) {
-  console.log("여러개의 값을 하나의 객체에 담아서 보냄.");
+  console.log('여러개의 값을 하나의 객체에 담아서 보냄.');
 }
 
 setParameters(parameters);

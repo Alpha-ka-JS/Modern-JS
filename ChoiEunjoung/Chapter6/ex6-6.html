@@ -7,10 +7,10 @@
     <!-- 6.4.2 폼 컨트롤러 입력값 읽기 -->
     <script>
       window.onload = function () {
-        document.getElementById("button").onclick = function () {
-          var h = parseFloat(document.getElementById("height").value);
-          var w = parseFloat(document.getElementById("weight").value);
-          var bmi = document.getElementById("bmi");
+        document.getElementById('button').onclick = function () {
+          var h = parseFloat(document.getElementById('height').value);
+          var w = parseFloat(document.getElementById('weight').value);
+          var bmi = document.getElementById('bmi');
           bmi.innerHTML = (w / h / h).toFixed(1);
         };
       };

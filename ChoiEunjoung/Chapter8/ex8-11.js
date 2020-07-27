@@ -25,7 +25,7 @@ var square = (x) => {
 
 //인수가 없으면 괄호 생략 안됨
 var f = () => {
-  console.log("hello");
+  console.log('hello');
 };
 // 함수 몸통 안에 문장이 return 뿐이면 return 키워드 생략가능
 var square = (x) => x * x;
@@ -51,7 +51,7 @@ var f = function () {
   console.log(this.name);
 };
 var g = () => console.log(this.name);
-var tom = { name: "Tommm" };
+var tom = { name: 'Tommm' };
 f.call(tom); //Tommm
 // g.call(tom); // undefined
 
@@ -109,7 +109,7 @@ function makeIterator(arr) {
     },
   };
 }
-var iter = makeIterator(["A", "B", "C"]);
+var iter = makeIterator(['A', 'B', 'C']);
 console.log(iter.next()); // {value: "A", done: false}
 console.log(iter.next()); // {value: "B", done: false}
 console.log(iter.next()); // {value: "C", done: false}

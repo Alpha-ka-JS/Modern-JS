@@ -25,26 +25,26 @@ call : 쉼표로 구분한 값의 목록
 
 */
 function say(greeting, honorifics) {
-  console.log(greeting + " " + honorifics + this.name);
+  console.log(greeting + ' ' + honorifics + this.name);
 }
-var tom = { name: "Tom Sawyer" };
-var becky = { name: "B" };
-say.apply(tom, ["hello", "Mr."]);
-say.apply(becky, ["hi", "Ms."]);
-say.call(tom, "hello", "Mr.");
-say.call(becky, "hi", "Ms.");
+var tom = { name: 'Tom Sawyer' };
+var becky = { name: 'B' };
+say.apply(tom, ['hello', 'Mr.']);
+say.apply(becky, ['hi', 'Ms.']);
+say.call(tom, 'hello', 'Mr.');
+say.call(becky, 'hi', 'Ms.');
 
 /*
 8.8.4 bind 메서드
 Function 객체의 bind 메서드는 객체에 함수를 바인드한다. 
 */
 function say(greeting, honorifics) {
-  console.log(greeting + " " + honorifics + this.name);
+  console.log(greeting + ' ' + honorifics + this.name);
 }
 
-var tom = { name: "Tom" };
+var tom = { name: 'Tom' };
 var sayToTom = say.bind(tom);
-sayToTom("hello", "Mr."); // 이렇게 호출하면 this가 항상 Tom을 가리킨다. say.bind(tom)은 톰 객체를 함수 say의 this로 설정한 새로운 함수를 만들어반환
+sayToTom('hello', 'Mr.'); // 이렇게 호출하면 this가 항상 Tom을 가리킨다. say.bind(tom)은 톰 객체를 함수 say의 this로 설정한 새로운 함수를 만들어반환
 
 /*
 8.8.5 함수에 프로퍼티 추가하기 
@@ -66,5 +66,5 @@ function fibo(n) {
   return fibo[n];
 }
 for (var i = 0; i <= 20; i++) {
-  console.log((" " + i).slice(-2) + ":" + fibo(i));
+  console.log((' ' + i).slice(-2) + ':' + fibo(i));
 }

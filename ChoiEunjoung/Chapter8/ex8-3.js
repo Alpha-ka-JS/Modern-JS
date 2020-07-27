@@ -102,14 +102,14 @@ bindObject 프로퍼티에는 전역객체 window 참조가 할당됨
 
 */
 var Tom = {
-  name: "Tom",
+  name: 'Tom',
   sayHello: function () {
-    console.log("Hello!" + this.name);
+    console.log('Hello!' + this.name);
   },
 };
 
 Tom.sayHello();
-var huck = { name: "Huck" };
+var huck = { name: 'Huck' };
 huck.sayHello = Tom.sayHello;
 huck.sayHello();
 
@@ -130,11 +130,11 @@ function f() {
 
 */
 
-var a = "A"; //자유변수
+var a = 'A'; //자유변수
 function f() {
-  var b = "B"; // 자유변수
+  var b = 'B'; // 자유변수
   function g() {
-    var c = "C"; // 속박변수
+    var c = 'C'; // 속박변수
     console.log(a + b + c);
   }
   g();

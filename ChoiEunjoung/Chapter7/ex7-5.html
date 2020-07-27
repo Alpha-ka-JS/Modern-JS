@@ -15,7 +15,7 @@
       그것만 남겨두고 3의 배수를 목록에서 모두 지운다.. 이 작업을 반복한다
        */
 
-      var n = parseInt(prompt("n을 입력해주세요!"));
+      var n = parseInt(prompt('n을 입력해주세요!'));
       var p = []; //아래 i가 소수면 p[i]=true, 아니라면 false로 처리
       for (var i = 2; i <= n; i++) {
         p[i] = true;
@@ -30,7 +30,7 @@
       }
       for (var i = 2; i <= n - 2; i++) {
         if (p[i] && p[i + 2]) {
-          document.write(i + "," + (i + 2) + "<br>");
+          document.write(i + ',' + (i + 2) + '<br>');
         }
       }
     </script>
