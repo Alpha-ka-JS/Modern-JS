@@ -12,7 +12,7 @@ var a = [5, 4, 3];
 for (var v of a) console.log(v);
 
 // symbol.iterator 메서드를 가진 객체는 반복가능한 객체 - Array,STring,TypedArray,Map,Set
-for (var v of "EUN") console.log(v);
+for (var v of 'EUN') console.log(v);
 //for (var v of iter) console.log(v); //이런건 안됨
 // var iterable = {};
 // iterable[Symbol.iterator] = function () {
@@ -21,7 +21,7 @@ for (var v of "EUN") console.log(v);
 // for (var v of iterable) console.log(v);
 
 //반복 가능한 내장객체의 이터레이터는 반복 가능
-var arr = ["A", "B", "C"];
+var arr = ['A', 'B', 'C'];
 for (var v of arr) console.log(v);
 var iter = arr[Symbol.iterator]();
 for (var v of iter) console.log(v);

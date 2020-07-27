@@ -13,7 +13,7 @@ console.log(x); //2
 var pi = 3.14;
 console.log(pi); //3.14
 
-pi = "원주율";
+pi = '원주율';
 console.log(pi); //원주율
 
 //원시타입 - 숫자 문자열 논리값 undfined null symbol

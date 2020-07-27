@@ -11,8 +11,8 @@
     </style>
     <script>
       window.onload = function () {
-        var canvas = document.getElementById("mycanvas");
-        var ctx = canvas.getContext("2d");
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext('2d');
         var img = new Image();
         img.onload = function () {
           //객체 생성하고 나서 실행하겠다는 것
@@ -21,17 +21,23 @@
           imageData.getRGBA = function (m, n, i) {
             return this.data[this.width * 4 * n + 4 * m + i];
           };
-          var rgb = document.getElementById("rgb");
+          var rgb = document.getElementById('rgb');
           canvas.onclick = function (event) {
             var x = event.offsetX; //  x좌표
             var y = event.offsetY; // y좌표
-            rgb.innerHTML = " R:" + to3digit(imageData.getRGBA(x, y, 0)) + " G:" + to3digit(imageData.getRGBA(x, y, 1)) + " B:" + to3digit(imageData.getRGBA(x, y, 2));
+            rgb.innerHTML =
+              ' R:' +
+              to3digit(imageData.getRGBA(x, y, 0)) +
+              ' G:' +
+              to3digit(imageData.getRGBA(x, y, 1)) +
+              ' B:' +
+              to3digit(imageData.getRGBA(x, y, 2));
           };
         };
-        img.src = "./iu.jpg";
+        img.src = './iu.jpg';
       };
       function to3digit(n) {
-        return ("000" + n).slice(-3);
+        return ('000' + n).slice(-3);
       }
     </script>
   </head>

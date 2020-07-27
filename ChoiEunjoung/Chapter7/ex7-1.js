@@ -7,13 +7,13 @@ try~ catch, if/else, for등등
 //조건문
 var name = null;
 if (!name) {
-  name = "";
-  message = "이름을 입력하세요. ";
+  name = '';
+  message = '이름을 입력하세요. ';
 }
 //else
 var x = 7;
-if (x >= 0) console.log("Positive or Zero");
-else console.log("Negative");
+if (x >= 0) console.log('Positive or Zero');
+else console.log('Negative');
 
 //괄호로 안묶어준다니..!
 var y = 2;
@@ -21,17 +21,17 @@ var z = 3;
 if (x > y)
   if (x > z)
     //undefined라면 실행되지않는다~
-    console.log("x가 제일 큼");
-  else console.log("x는 y보다 작다 ");
+    console.log('x가 제일 큼');
+  else console.log('x는 y보다 작다 ');
 //잘못 해석되는것을 막으려면 블록으로 채워줘야함 어쨌든 이렇게 해도 실행은 됨
 var num = 1;
 if (num == 1) {
-  console.log("1");
+  console.log('1');
 } else {
   if (num == 2) {
-    console.log("2");
+    console.log('2');
   } else {
-    console.log("other");
+    console.log('other');
   }
 }
 
@@ -46,41 +46,41 @@ function isLeapYear(year) {
 var n = 2;
 switch (n) {
   case 1:
-    console.log("1");
+    console.log('1');
     break;
   case 2:
-    console.log("2");
+    console.log('2');
     break;
   default:
-    console.log("other");
+    console.log('other');
     break;
 }
 
 // break 또는 return을 해줘야함
 function binaryOperation(a, b, op) {
   switch (op) {
-    case "*":
+    case '*':
       return a * b;
-    case "+":
+    case '+':
       return a + b;
-    case "-":
+    case '-':
       return a - b;
-    case "/":
+    case '/':
       return a / b;
-    case "%":
+    case '%':
       return a % b;
-    case "^":
+    case '^':
       return Math.pow(a, b);
   }
 }
 
-console.log(binaryOperation(2, 3, "+"));
-console.log(binaryOperation(2, 3, "-"));
-console.log(binaryOperation(2, 3, "*"));
-console.log(binaryOperation(2, 3, "/"));
-console.log(binaryOperation(2, 3, "%"));
-console.log(binaryOperation(2, 3, "^"));
-console.log(binaryOperation(2, 3, "A")); // undefined
+console.log(binaryOperation(2, 3, '+'));
+console.log(binaryOperation(2, 3, '-'));
+console.log(binaryOperation(2, 3, '*'));
+console.log(binaryOperation(2, 3, '/'));
+console.log(binaryOperation(2, 3, '%'));
+console.log(binaryOperation(2, 3, '^'));
+console.log(binaryOperation(2, 3, 'A')); // undefined
 //return 이나 break를 만나기 전까지 발견한 모든 문장을 실행하는 것 폴 스루
 //default의 위치도 상관은 없으나 로직이 헷갈리므로 마지막에 써주자
 

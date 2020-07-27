@@ -19,10 +19,10 @@ function hanoi(n, a, b, c) {
     return;
   }
   hanoi(n - 1, a, c, b);
-  console.log(n + "번째 원반 : " + a + " -> " + c);
+  console.log(n + '번째 원반 : ' + a + ' -> ' + c);
   hanoi(n - 1, b, a, c);
 }
-hanoi(4, "a", "b", "c");
+hanoi(4, 'a', 'b', 'c');
 
 //퀵소트
 //x: 정렬할 배열 , first : 정렬할 첫번째 요소의 위치 ,last : 정렬할 마지막 요소의 위치

@@ -15,15 +15,15 @@ ex 15 %4 = 3 , 5%1.5 = 0.5
 4. 계산할 수 없는 경우에는 NaN, 피연산자가 true면 1, false나 null이면 0으로 판단
 undefined면 NaN
 */
-console.log(1 + "2month"); //12month
+console.log(1 + '2month'); //12month
 console.log(0 / 0); //NaN
 console.log(true + true); //2
-console.log("one" - 1); //NaN
+console.log('one' - 1); //NaN
 
 a = 1;
 b = ++a; //2
 c = a++ + 2; //4 ,a=3
-console.log(a + " " + b + " " + c); //3 2 4
+console.log(a + ' ' + b + ' ' + c); //3 2 4
 
 //Math 객체의 프로퍼티
 function polarToDescartes(r, theta) {

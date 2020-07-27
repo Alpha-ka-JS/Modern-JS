@@ -15,12 +15,12 @@
       */
       function displayTime() {
         var d = new Date();
-        console.log("현재 시각은 " + d.toLocaleString() + "입니다.");
+        console.log('현재 시각은 ' + d.toLocaleString() + '입니다.');
       }
       //window객체의 onload프로퍼티에 함수를 저장한다.
       //이 함수는 웹 브라우저가 문서를 모두 읽어 들인 후 시작한다.
       window.onload = function () {
-        var button = document.getElementById("btn");
+        var button = document.getElementById('btn');
         button.onclick = displayTime;
         // input 요소를 클릭했을때 동작할 이벤트 처리기
         // 요소객체의 onclick 프로퍼티 값으로 함수 displayTime 의 참조를 대입한다.
@@ -41,10 +41,10 @@
 
       //지정된 시간마다 반복해서 실행하기  :setInterval
       setInterval(function () {
-        console.log(new Date() + " with SetInterval");
+        console.log(new Date() + ' with SetInterval');
       }, 1000);
       var timer = setInterval(() => {
-        console.log("setinterval with timer");
+        console.log('setinterval with timer');
       }, 2000);
       clearInterval(timer);
       setInterval('console.log("hello")', 1000);
