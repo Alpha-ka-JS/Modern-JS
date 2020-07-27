@@ -42,7 +42,7 @@ function* idMaker() {
     try {
       yield count++;
     } catch (e) {
-      console.log("Error");
+      console.log('Error');
     }
   }
 }
@@ -50,18 +50,18 @@ function* idMaker() {
 var iter = idMaker();
 console.log(iter.next());
 console.log(iter.next());
-iter.throw(new Error("Error....."));
+iter.throw(new Error('Error.....'));
 
 //반복가능한 객체에 위임하기 yield
 function* f() {
-  yield "X";
-  yield "Y";
-  yield "Z";
+  yield 'X';
+  yield 'Y';
+  yield 'Z';
 }
 function* g() {
   yield 0;
   yield* [2, 4];
-  yield* "AB";
+  yield* 'AB';
   yield* f();
 }
 var iter = g();
@@ -83,7 +83,13 @@ function htmlEscape(strings, ...values) {
   }
   return result;
   function escape(s) {
-    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "&#039;").replace(/"/g, "&quot;").replace(/`/g, "&#096;");
+    return s
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/'/g, '&#039;')
+      .replace(/"/g, '&quot;')
+      .replace(/`/g, '&#096;');
   }
 }
 var userinput = "<script>alert('test');</script>";

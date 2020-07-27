@@ -15,7 +15,7 @@
           dy = [0, 1, 0, -1];
         var x = x0;
         var y = y0;
-        c.strokeStyle = "black";
+        c.strokeStyle = 'black';
         c.globalAlpha = 0.25;
         while (true) {
           yield;
@@ -29,9 +29,9 @@
         }
       }
       window.onload = function () {
-        var canvas = document.getElementById("mycanvas");
-        var ctx = canvas.getContext("2d");
-        var iter = randomWalk(ctx, 300, 300, 4, "red");
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext('2d');
+        var iter = randomWalk(ctx, 300, 300, 4, 'red');
         setInterval(function () {
           iter.next();
         }, 10);

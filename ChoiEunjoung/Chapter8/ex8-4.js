@@ -7,11 +7,11 @@ f가 호출되어 g를 평가하는 시점에 생성됨
 함수g의 함수객체가 있는 동안 클로저 안의 모든 렉시컬 환경 컴포넌트를 함수 g의 함수 객체가 참조하므로 클로저는 가비지 컬렉션 대상이 되지 않음
 
 */
-var a = "A"; //자유변수
+var a = 'A'; //자유변수
 function f() {
-  var b = "B"; // 자유변수
+  var b = 'B'; // 자유변수
   function g() {
-    var c = "C"; // 속박변수
+    var c = 'C'; // 속박변수
     console.log(a + b + c);
   }
   g();
@@ -83,7 +83,7 @@ function Person(name, age) {
     },
   };
 }
-var person = Person("Tom", 18);
+var person = Person('Tom', 18);
 console.log(person.getName());
 console.log(person.getAge());
 person.setAge(19);

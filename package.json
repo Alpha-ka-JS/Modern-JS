@@ -8,7 +8,9 @@
     "jehwan-lint": "eslint --ext .js,.html LeeJehwan/",
     "jehwan-lint-fix": "eslint --ext .js,.html LeeJehwan/ --fix",
     "sungwon-lint": "eslint --ext .js,.html JeongSungWon",
-    "sungwon-lint-fix": "eslint --ext .js,.html JeongSungWon/ --fix"
+    "sungwon-lint-fix": "eslint --ext .js,.html JeongSungWon/ --fix",
+    "eunjoung-lint": "eslint --ext .js,.html ChoiEunjoung/",
+    "eunjoung-lint-fix": "eslint --ext .js,.html ChoiEunjoung/ --fix"
   },
   "repository": {
     "type": "git",

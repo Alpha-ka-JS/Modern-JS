@@ -6,17 +6,17 @@
     <title>Document</title>
     <script>
       window.onload = function () {
-        var canvas = document.getElementById("mycanvas");
-        var ctx = canvas.getContext("2d");
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext('2d');
         strokeRoundedRect(ctx, 0, 10, 100, 80, 10);
         strokeRoundedRect(ctx, 150, 10, 100, 80, 30);
 
         ctx.beginPath();
         ctx.lineWidth = 10;
-        ctx.strokeStyle = "purple";
-        ctx.fillStyle = "blue";
+        ctx.strokeStyle = 'purple';
+        ctx.fillStyle = 'blue';
         ctx.strokeRect(10, 100, 100, 80);
-        ctx.globalAlpha = "0.6"; //아래에 적용..
+        ctx.globalAlpha = '0.6'; //아래에 적용..
         ctx.fillRect(150, 100, 100, 80);
         //기타등등 : lineCap, lineJoin
       };
