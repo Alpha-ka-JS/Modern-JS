@@ -1,4 +1,4 @@
-[![<CircleCI>](https://circleci.com/gh/Alpha-ka-JS/Modern-JS.svg?style=svg)](https://app.circleci.com/pipelines/github/Alpha-ka-JS/Modern-JS)
+[![CircleCI](https://circleci.com/gh/Alpha-ka-JS/Modern-JS/tree/master.svg?style=svg)](https://circleci.com/gh/Alpha-ka-JS/Modern-JS/tree/master)
 ![GitHub contributors](https://img.shields.io/github/contributors/Alpha-ka-js/Modern-jS?&color=brightgreen)
 ![<Languages>](https://img.shields.io/github/languages/count/Alpha-ka-JS/Modern-JS?&color=brightgreen)
 ![<TopLanguages>](https://img.shields.io/github/languages/top/Alpha-ka-JS/Modern-JS?&color=brightgreen)
