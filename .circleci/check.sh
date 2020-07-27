@@ -2,10 +2,10 @@
 
 COMMIT=${CIRCLE_SHA1}
 echo commit log is ${COMMIT}
-GIT_LOG = $(git log -1 --pretty=format:"%H" -- ./$1)
+GIT_LOG=$(git log -1 --pretty=format:"%H" -- ./$1)
 echo git log is ${GIT_LOG}
 
-if [ "${COMMIT}" != "${GIT_LOG}"]; then
-  echo cancle circleci test
-  circleci-agent step halt
+if [ "${COMMIT}" != "${GIT_LOG}" ]; then
+    echo cancle circle ci
+    circleci-agent step halt
 fi
