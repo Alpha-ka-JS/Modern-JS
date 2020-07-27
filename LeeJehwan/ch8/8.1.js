@@ -28,3 +28,4 @@ function norm(x) {
 var a = [2, 1, 3, 5, 7];
 var n = norm(a);
 console.log(n);
+console.log('hello');
