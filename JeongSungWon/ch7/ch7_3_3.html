@@ -5,46 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>원의 n분점을 연결하는 직선 그리기</title>
     <script>
-        function diamond(c,n,x,y,r,color){
-            var p = generatePoints(n,x,y,r);
-            c.strokeStyle = color;
-            c.beginPath();
-            for(var i = 0 ; i < n; i++){
-                for(var j = i + 1; j < n; j++){
-                    c.moveTo(p[i].x, p[i].y);
-                    c.lineTo(p[j].x, p[j].y);
-                }
+        function diamond(c, n, x, y, r, color) {
+          var p = generatePoints(n, x, y, r);
+          c.strokeStyle = color;
+          c.beginPath();
+          for (var i = 0; i < n; i++) {
+            for (var j = i + 1; j < n; j++) {
+              c.moveTo(p[i].x, p[i].y);
+              c.lineTo(p[j].x, p[j].y);
             }
-            c.stroke();
-            // c.strokeStyle = color;
-            // c.beginPath();
-            // for(var i = 0; i < n; i++){
-            //     var t = i * 2 * Math.PI / n;
-            //     for(var j = i + 1; j < n; j++){
-            //         var s = j * 2 * Math.PI / n;
-            //         c.moveTo(x + r * Math.cos(t), y + r * Math.sin(t));
-            //         c.lineTo(x + r * Math.cos(s), y + r * Math.sin(s));
-            //     }
-            // }
-            // c.stroke();
+          }
+          c.stroke();
+          // c.strokeStyle = color;
+          // c.beginPath();
+          // for(var i = 0; i < n; i++){
+          //     var t = i * 2 * Math.PI / n;
+          //     for(var j = i + 1; j < n; j++){
+          //         var s = j * 2 * Math.PI / n;
+          //         c.moveTo(x + r * Math.cos(t), y + r * Math.sin(t));
+          //         c.lineTo(x + r * Math.cos(s), y + r * Math.sin(s));
+          //     }
+          // }
+          // c.stroke();
         }
-        function generatePoints(n,x,y,r){
-            var point =[];
-            for(var i = 0 ; i < n; i++){
-                var t = i * 2 * Math.PI / n;
-                point[i] = {
-                    x: x + r * Math.cos(t),
-                    y: y + r * Math.sin(t)
-                };
-            }
-            return point;
+        function generatePoints(n, x, y, r) {
+          var point = [];
+          for (var i = 0; i < n; i++) {
+            var t = (i * 2 * Math.PI) / n;
+            point[i] = {
+              x: x + r * Math.cos(t),
+              y: y + r * Math.sin(t),
+            };
+          }
+          return point;
         }
-        window.onload = function(){
-            var canvas = document.getElementById("mycanvas");
-            var ctx = canvas.getContext("2d");
-            diamond(ctx, 6, 170, 170, 150, 'darkblue');
-            diamond(ctx,12, 490, 170, 150, 'darkblue');
-            diamond(ctx,18, 810, 170, 150, 'darkblue');;
+        window.onload = function () {
+          var canvas = document.getElementById('mycanvas');
+          var ctx = canvas.getContext('2d');
+          diamond(ctx, 6, 170, 170, 150, 'darkblue');
+          diamond(ctx, 12, 490, 170, 150, 'darkblue');
+          diamond(ctx, 18, 810, 170, 150, 'darkblue');
         };
     </script>
 </head>

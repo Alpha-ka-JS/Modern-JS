@@ -11,7 +11,7 @@
 자바랑 C++등은 기본제공함 자스는 제공하지 않지만 객체를 이름공간으로 활용 가능
 */
 var myApp = myApp || {}; //정의되어 있으면 사용하고 아니면 빈 객체를 할당
-myApp.name = "EUNJOUNG";
+myApp.name = 'EUNJOUNG';
 myApp.showName = function () {
   console.log(this.name);
 };
@@ -19,7 +19,7 @@ myApp.showName = function () {
 myApp.view = {};
 myApp.controls = {};
 myApp.view.draw = function () {
-  console.log("object");
+  console.log('object');
 };
 myApp.controls.timeInterval = 16;
 /*
@@ -27,10 +27,10 @@ myApp.controls.timeInterval = 16;
 함수에서 선언된 변수의 유효범위는 함수 내부이다. 따라서 그 변수를 함수 안에서는 읽거나 쓸 수 있지만 바깥에서는 읽거나 쓸 수 없다
 이 성질을 활용하면 함수를 이름공간으로 활용할 수 있음
 */
-var x = "global x";
+var x = 'global x';
 (function () {
-  var x = "local x";
-  var y = "local y";
+  var x = 'local x';
+  var y = 'local y';
 })();
 console.log(x);
 //console.log(y); //error
@@ -42,7 +42,7 @@ console.log(x);
 */
 var Module = Module || {}; //모듈 있으면 쓰고 아님 빈객체
 (function (_Module) {
-  var name = "noname"; //프라이빗
+  var name = 'noname'; //프라이빗
   function getName() {
     //프라이빗
     return name;
@@ -56,5 +56,5 @@ var Module = Module || {}; //모듈 있으면 쓰고 아님 빈객체
     name = x;
   };
 })(Module);
-Module.setName("eun");
+Module.setName('eun');
 Module.showName();

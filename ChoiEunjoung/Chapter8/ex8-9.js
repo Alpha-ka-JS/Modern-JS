@@ -7,20 +7,22 @@
 
 */
 
-digits = "";
+digits = '';
 for (var i = 0; i < 10; i++) {
   digits += i;
 }
 console.log(digits);
 
-randomChars = "";
+randomChars = '';
 for (var i = 0; i < 8; i++) {
-  randomChars += String.fromCharCode(Math.floor(Math.random() * 26) + "a".charCodeAt(0));
+  randomChars += String.fromCharCode(
+    Math.floor(Math.random() * 26) + 'a'.charCodeAt(0)
+  );
 }
 console.log(randomChars);
 
 function joinString(n, f) {
-  var s = "";
+  var s = '';
   for (var i = 0; i < n; i++) {
     s += f(i);
   }
@@ -31,7 +33,9 @@ var digits = joinString(10, function (i) {
   return i;
 });
 var rchar = joinString(8, function (i) {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + "a".charCodeAt(0));
+  return String.fromCharCode(
+    Math.floor(Math.random() * 26) + 'a'.charCodeAt(0)
+  );
 });
 console.log(digits);
 console.log(rchar);
@@ -60,7 +64,7 @@ var isPrime_m = memorization(isPrime);
 var N = 1000;
 for (var i = 2; i <= N; i++) isPrime_m(i);
 for (var i = 2; i + 2 <= N; i++) {
-  if (isPrime_m(i) && isPrime_m(i + 2)) console.log(i + " " + (i + 2));
+  if (isPrime_m(i) && isPrime_m(i + 2)) console.log(i + ' ' + (i + 2));
 }
 
 function memorize(f) {
@@ -75,14 +79,14 @@ var fibo = memorize(function (n) {
   return fibo(n - 1) + fibo(n - 2);
 });
 for (var i = 0; i <= 20; i++) {
-  console.log((" " + i).slice(-2) + " : " + fibo(i));
+  console.log((' ' + i).slice(-2) + ' : ' + fibo(i));
 }
 
 function memorize(f) {
   var ca = {};
   return function () {
-    var key = "";
-    for (var i = 0; i < arguments.length; i++) key += arguments[i] + ",";
+    var key = '';
+    for (var i = 0; i < arguments.length; i++) key += arguments[i] + ',';
     if (ca[key] == undefined) ca[key] = f.apply(null, arguments);
     return ca[key];
   };

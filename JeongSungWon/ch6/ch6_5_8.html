@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>픽셀의 RGB 값</title>
     <style>
-        canvas{ border:2px solid gray;}
+      canvas {
+        border: 2px solid gray;
+      }
     </style>
     <script>
-        window.onload=function(){
-            var canvas = document.getElementById("mycanvas");
-            var ctx = canvas.getContext("2d");
-            var img = new Image();
-            img.onload = function(){
-                ctx.drawImage(img,0,0);
-                var imageData = ctx.getImageData(0,0,canvas.width,canvas.height);
-                imageData.getRGBA = function(m,n,i){
-                    return this.data[this.width*4*n + 4*m+i];
-                };
-                var rgb = document.getElementById("rgb");
-                canvas.onclick=function(event){
-                    var x = event.offsetX;
-                    var y = event.offsetY;
-                    rgb.innerHTML = " R:"+to3digit(imageData.getRGBA(x,y,0)) +" G:"+to3digit(imageData.getRGBA(x,y,1)) + " B:"+to3digit(imageData.getRGBA(x,y,2));
-                };
-            };
-            img.src = "./alpaca.png";  
+      window.onload = function () {
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext('2d');
+        var img = new Image();
+        img.onload = function () {
+          ctx.drawImage(img, 0, 0);
+          var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          imageData.getRGBA = function (m, n, i) {
+            return this.data[this.width * 4 * n + 4 * m + i];
+          };
+          var rgb = document.getElementById('rgb');
+          canvas.onclick = function (event) {
+            var x = event.offsetX;
+            var y = event.offsetY;
+            rgb.innerHTML =
+              ' R:' +
+              to3digit(imageData.getRGBA(x, y, 0)) +
+              ' G:' +
+              to3digit(imageData.getRGBA(x, y, 1)) +
+              ' B:' +
+              to3digit(imageData.getRGBA(x, y, 2));
+          };
         };
-        function to3digit(n){
-            return ("000"+n).slice(-3);
-        }
+        img.src = './alpaca.png';
+      };
+      function to3digit(n) {
+        return ('000' + n).slice(-3);
+      }
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <canvas id="mycanvas" width="1000" height="1000"></canvas>
     <div><output id="rgb"></output></div>
-</body>
+  </body>
 </html>
