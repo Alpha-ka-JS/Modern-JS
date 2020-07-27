@@ -31,26 +31,11 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: "check"
+          name: check
           command: bash ./.circleci/check.sh LeeJehwan
       - run:
-          name: "lint test"
+          name: lint test
           command: npm run jehwan-lint
-
-  lint_eunjoung:
-    docker:
-      # The primary container is an instance of the first image listed. The job's commands run in this container.
-      - image: cimg/node:current
-    steps:
-      # Reuse the workspace from the build job
-      - attach_workspace:
-          at: .
-      - run:
-          name: "check"
-          command: bash ./.circleci/check.sh ChoiEunjoung
-      - run:
-          name: "lint test"
-          command: npm run eunjoung-lint
   lint_sungwon:
     docker:
       # The primary container is an instance of the first image listed. The job's commands run in this container.
@@ -63,19 +48,34 @@ jobs:
           name: "check"
           command: bash ./.circleci/check.sh JeongSungWon
       - run:
-          name: "lint test"
+          name: lint test
           command: npm run sungwon-lint
+  lint_eunjoung:
+    docker:
+      # The primary container is an instance of the first image listed. The job's commands run in this container.
+      - image: cimg/node:current
+    steps:
+      # Reuse the workspace from the build job
+      - attach_workspace:
+          at: .
+      - run:
+          name: "check"
+          command: bash ./.circleci/check.sh ChoiEunjoung
+      - run:
+          name: lint test
+          command: npm run eunjoung-lint
+
 workflows:
   version: 2
-  build_and_lint_test:
+  build_and_test:
     jobs:
       - build
       - lint_jehwan:
           requires:
             - build
-      - lint_eunjoung:
+      - lint_sungwon:
           requires:
             - build
-      - lint_sungwon:
+      - lint_eunjoung:
           requires:
             - build
