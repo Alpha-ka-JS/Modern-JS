@@ -1,10 +1,10 @@
 #!/bin/bash
 
-USER_NAME=$1
-echo USER_NAME is $1
-USER_NAME_ARG=$2
+COMMIT=${CIRCLE_SHA1}
+echo ${COMMIT}
+GIT_LOG=$(git log -1 --format=format%H -- ./${$0})
+echo test ${GIT_LOG}
 
-if [ $USER_NAME_ARG != $USER_NAME ]; then
-    echo $USER_NAME_ARG is not $USER_NAME
+if [ "${COMMIT}" != "${GIT_LOG}" ]; then
     circleci-agent step halt
 fi

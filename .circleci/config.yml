@@ -32,7 +32,7 @@ jobs:
           at: .
       - run:
           name: "check"
-          command: bash ./.circleci/check.sh LeeJehwan ${CIRCLE_PR_USERNAME}
+          command: bash ./.circleci/check.sh LeeJehwan
       - run:
           name: "lint test"
           command: npm run jehwan-lint
@@ -47,7 +47,7 @@ jobs:
           at: .
       - run:
           name: "check"
-          command: bash ./.circleci/check.sh soleileun ${CIRCLE_PR_USERNAME}
+          command: bash ./.circleci/check.sh ChoiEunjoung
       - run:
           name: "lint test"
           command: npm run eunjoung-lint
@@ -61,7 +61,7 @@ jobs:
           at: .
       - run: 
           name: "check"
-          command: bash ./.circleci/check.sh sungwon2054 ${CIRCLE_PR_USERNAME}
+          command: bash ./.circleci/check.sh JeongSungWon
       - run:
           name: "lint test"
           command: npm run sungwon-lint
