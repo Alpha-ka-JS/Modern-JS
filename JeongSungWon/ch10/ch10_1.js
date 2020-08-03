@@ -67,8 +67,10 @@ console.log(['A', 'B', 'C', date].toString());
 console.log(['A', 'B', 'C', date].toLocaleString());
 
 //10.1.4 반복 메서드
+//for-each 기본함수에 영향을 끼침
 var a = [1, 2, 3, 4, 5];
 var sum = 0;
+
 a.forEach(function (value) {
   sum += value;
 });
@@ -105,7 +107,7 @@ var a = [1, 2, 3, 4, 5];
 console.log(
   a.reduce(function (prev, value) {
     return prev + value;
-  }, 0)
+  }, 0) //prev의 초기값이 0
 );
 console.log(
   a.reduce(function (prev, value) {
