@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>두더지 잡기 게임</title>
+    <script>
+      function makeMoles(nx, ny) {
+        var molesState = new Map();
+        var W = 50,
+          SPACE = 10;
+        for (var i = 0; i < nx; i++) {
+          for (var j = 0; j < ny; j++) {
+            var element = document.createElement('div');
+            element.style.width = W + 'px';
+            element.style.height = W + 'px';
+            element.style.background = 'url(./mole.jpg)';
+            element.style.position = 'absolute';
+            element.style.opacity = 0.2;
+            element.style.transition =
+              'transform 0.5s ease-in-out, opacity 0.5s ease';
+            // BODY의 노드 목록에 추가
+            document.body.appendChild(element);
+            // 요소 배치
+            element.style.left = SPACE + i * (W + SPACE) + 'px';
+            element.style.top = 2 * SPACE + j * (W + SPACE) + 'px';
+            // Map 객체에 요소의 상태(좌표, 투명도)를 기록한다
+            molesState.set(element, { x: i, y: j, opacity: 0.2 });
+            element.onclick = function clickEventHandler(e) {
+              var element = e.currentTarget;
+              var state = molesState.get(element);
+              if (state.opacity >= 0.5) {
+                document.body.removeChild(element);
+                molesState.delete(element);
+              }
+            };
+          }
+        }
+        return molesState;
+      }
+      window.onload = function () {
+        var startButton = document.getElementById('start');
+        startButton.onclick = start;
+        function start() {
+          var TIME_INTERVAL = 1500,
+            DISPLAY_TIME = 1050;
+          var molesState = makeMoles(7, 4);
+          // 일정한 간격을 두고 두더지를 무작위로 표시
+          // 불투명도를 1로 바꾼 다음 위로 이동
+          var timer = setInterval(function appearMole() {
+            if (molesState.size == 0) {
+              clearInterval(timer);
+              document.body.innerHTML = 'game over';
+              return;
+            }
+            // 있는 두더지를 무작위로 선택
+            var n = Math.floor(Math.random() * molesState.size);
+            var elements = molesState.keys();
+            var count = 0;
+            for (var element of elements) {
+              if (count++ == n) break;
+            }
+            var state = molesState.get(element);
+            // 불투명도를 1로 바꾸고 위로 10px 이동시켜서 두더지 표시
+            element.style.opacity = 1;
+            state.opacity = 1;
+            element.style.transform = 'translateY(-10px)';
+            // 일정 시간이 지나면 불투명도와 이동한 거리를 되돌린다
+            setTimeout(function hideMole() {
+              element.style.opacity = 0.2;
+              state.opacity = 0.2;
+              element.style.transform = 'translateY(0)';
+            }, DISPLAY_TIME);
+          }, TIME_INTERVAL);
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <p id="display">0.00</p>
+    <input id="start" type="button" value="start" />
+  </body>
+</html>
