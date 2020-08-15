@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gauss 소수</title>
+    <script>
+      var create2dArray = (n) => {
+        var array = new Int8Array(n * n);
+        return {
+          set: (i, j, value) => {
+            array[n * i + j] = value;
+          },
+          get: (i, j) => {
+            return array[n * i + j];
+          },
+        };
+      };
+      var gaussianPrimes = (n) => {
+        var m = create2dArray(n + 1);
+        for (var i = 0; i <= n; i++) {
+          for (var j = 0; j <= n; j++) {
+            m.set(i, j, 1);
+          }
+        }
+        m.set(0, 0, 0);
+        m.set(1, 0, 0);
+        m.set(0, 1, 0);
+        var sqrtn = Math.sqrt(Math.floor(n));
+        for (var a = 1; a <= sqrtn; a++) {
+          for (var b = 0; b <= sqrtn; b++) {
+            if (m.get(a, b)) {
+              var p = a,
+                q = b;
+              do {
+                var x = p,
+                  y = q;
+                do {
+                  m.set(x, y, 0);
+                } while ((x -= b) >= 0 && (y += a) <= n);
+                x = p;
+                y = q;
+                do {
+                  m.set(x, y, 0);
+                } while ((x += b) <= n && (y -= a) >= 0);
+                p += a;
+                q += b;
+              } while (p <= n);
+              m.set(a, b, 1);
+            }
+          }
+        }
+        return m;
+      };
+      window.onload = () => {
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext('2d');
+        var scale = 4;
+        var N = Math.floor(ctx.canvas.width / scale / 2);
+        var R = Math.floor(Math.sqrt(2) * N);
+        var a = gaussianPrimes(R);
+        for (var i = -N; i <= N; i++) {
+          for (var j = -N; j <= N; j++) {
+            if (a.get(Math.abs(i), Math.abs(j))) {
+              ctx.fillRect(
+                scale * (i + N) - scale / 2,
+                scale * (j + N) - scale / 2,
+                scale,
+                scale
+              );
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <canvas id="mycanvas" width="600" height="600"></canvas>
+  </body>
+</html>
