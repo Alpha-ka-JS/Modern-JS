@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>그래프</title>
+    <style>
+      #graph {
+        border: solid black 1px;
+      }
+    </style>
+    <script>
+      function draw(formula) {
+        if (!isProperFormula(formula)) return;
+        var graph = document.getElementById('graph');
+        var width = graph.width;
+        var height = graph.height;
+        g = graph.getContext('2d');
+        var xmin = -5,
+          xmax = 5,
+          ymin = -5,
+          ymax = 5;
+        function gx(x) {
+          return ((x - xmin) / (xmax - xmin)) * width;
+        }
+        function gy(y) {
+          return height - ((y - ymin) / (ymax - ymin)) * height;
+        }
+        drawAxis();
+        eval('function f(x) { return ' + formula + '; }');
+        drawGraph();
+        function drawAxis() {
+          g.strokeStyle = '#aaa';
+          for (var x = parseInt(xmin) - 1; x < xmax; x++) {
+            g.beginPath();
+            g.moveTo(gx(x), gy(ymin));
+            g.lineTo(gx(x), gy(ymax));
+            g.stroke();
+          }
+
+          for (var y = parseInt(ymin) - 1; y < ymax; y++) {
+            g.beginPath();
+            g.moveTo(gx(xmin), gy(y));
+            g.lineTo(gx(xmax), gy(y));
+            g.stroke();
+          }
+
+          g.strokeStyle = '#333';
+          g.beginPath();
+          g.moveTo(gx(xmin), gy(0));
+          g.lineTo(gx(xmax), gy(0));
+          g.stroke();
+
+          g.beginPath();
+          g.moveTo(gx(0), gy(ymin));
+          g.lineTo(gx(0), gy(ymax));
+          g.stroke();
+        }
+        function drawGraph() {
+          g.strokeStyle = 'red';
+          g.lineWidth = 1.5;
+          var N = Math.sqrt(width * width + height * height);
+          var dx = (xmax - xmin) / N;
+          g.beginPath();
+          g.moveTo(gx(xmin), gy(f(xmin)));
+          for (var x = xmin + dx; x <= xmax; x += dx) {
+            g.lineTo(gx(x), gy(f(x)));
+          }
+          g.stroke();
+        }
+      }
+      function isProperFormula(formula) {
+        var s = formula;
+        mathTalkens = [
+          '\\+',
+          '\\-',
+          '\\*',
+          '\\/',
+          '\\%',
+          '\\(',
+          '\\)',
+          '\\,',
+          ' ',
+          'Math\\.sqrt',
+          'Math\\.pow',
+          'Math\\.log',
+          'Math\\.abs',
+          'Math\\.cos',
+          'Math\\.sin',
+          'Math\\.tan',
+          'Math\\.exp',
+          'x',
+          '\\d',
+        ];
+        mathTalkens.forEach(function (el) {
+          s = s.replace(new RegExp(el, 'g'), '');
+        });
+        if (s.length == 0) return true;
+        return false;
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="graph" width="500px" height="500px"></canvas>
+  </body>
+</html>

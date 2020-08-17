@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>top page</title>
+    <script>
+      window.onload = () => {
+        var w;
+        document.getElementById('open').onclick = () => {
+          if (w) w.close();
+          w = open('newpage.html', 'new page', 'width=400, height=300');
+          w.moveBy(10, 20);
+          w.moveTo(100, 150);
+        };
+        document.getElementById('close').onclick = () => {
+          if (w) w.close();
+        };
+        document.getElementById('resize').onclick = () => {
+          if (w) w.close();
+          w = open('newpage.html', 'new page', 'width=400, height=300');
+          w.resizeBy(100, 200);
+          w.moveBy(10, 20);
+          w.moveTo(100, 150);
+          //   w.document.body.style.backgroundColor = 'red';
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <p>
+      <input type="button" value="open" id="open" />
+      <input type="button" value="close" id="close" />
+      <input type="button" value="resize" id="resize" />
+    </p>
+  </body>
+</html>
