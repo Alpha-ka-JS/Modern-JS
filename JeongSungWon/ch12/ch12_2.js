@@ -39,7 +39,7 @@ console.log(/\s\w\w/.test('JavaScript RegEXP'));
 console.log(/\s\w\w/.exec('JavaScriptRegEXP'));
 
 // 문자 클래스 안에서의 이스케이프
-console.log(/\-/.test('-'));
+console.log(/-/.test('-'));
 console.log(/\?/.test('!'));
 
 //12.2.4 반복 패턴
