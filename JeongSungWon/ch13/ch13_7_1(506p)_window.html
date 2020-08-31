@@ -8,6 +8,7 @@
       window.onload = function () {
         var w;
         document.getElementById('open').onclick = function () {
+          // eslint-disable-next-line prettier/prettier
           w = open(
             'ch13_7(506p)_newpage.html',
             'new page',
@@ -21,6 +22,7 @@
         };
         document.getElementById('moveBy').onclick = () => {
           if (w) w.close();
+          // eslint-disable-next-line prettier/prettier
           w = open(
             'ch13_7(506p)_newpage.html',
             'new page',
