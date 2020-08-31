@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   var para = document.getElementById('cards').textContent;
+      //   console.log(para);
+    </script>
+  </head>
+  <body>
+    <h1>하트</h1>
+    <p id="cards">&hearts;하트는<em>승려</em>라는 뜻입니다..</p>
+    <script>
+      var para = document.getElementById('cards').textContent;
+      console.log(para);
+      var para = document.getElementById('cards');
+      para.innerHTML = '&diams;다이아는 <strong>상인</strong>이라는 뜻입니다';
+      console.log(para.innerHTML);
+
+      //textContent는 script 요소 안의 텍스트를 반환하지만 innerText는 반환하지 않음
+      // textContent는 공백 문자를 그대로 반환하지만 innerText는 남는 공백 문자를 제거
+      //innerText는 table tbody tr 요소등의 테이블 요소를 수정할 수 없음
+
+      //텍스트 정보를 가져오는 함수 (크로스 브라우징 지원 )
+      function textContent(element) {
+        var content = element.textContent;
+        if (content !== undefined) return content;
+        else element.innerHTML;
+      }
+    </script>
+  </body>
+</html>
