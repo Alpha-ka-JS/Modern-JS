@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        var w;
+        document.getElementById('open').onclick = function () {
+          w = open(
+            'ch13_7(506p)_newpage.html',
+            'new page',
+            'width=400, height=300'
+          );
+          w.document.body.style.backgroundColor = 'green';
+          opener.document.body.style.backgroundColor = 'red';
+        };
+        document.getElementById('close').onclick = function () {
+          if (w) w.close();
+        };
+        document.getElementById('moveBy').onclick = () => {
+          if (w) w.close();
+          w = open(
+            'ch13_7(506p)_newpage.html',
+            'new page',
+            'width=400, height=300'
+          );
+          w.moveBy(100, 20);
+          w.resizeTo(200, 180);
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <p>
+      <input type="button" value="open" id="open" />
+      <input type="button" value="close" id="close" />
+      <input type="button" value="moveBy" id="moveBy" />
+    </p>
+  </body>
+</html>
