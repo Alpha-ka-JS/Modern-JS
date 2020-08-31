@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <input type="checkbox" name="dog" value="pome" />포메라니안<br />
+      <input type="checkbox" name="dog" value="dalma" />달마시안<br />
+      <input type="checkbox" name="dog" value="bool" />불독<br />
+    </form>
+    <script>
+      var dogs = document.getElementsByName('dog');
+      dogs[1].value = 'corgi';
+      dogs[1].nextSibling.nodeValue = '웰시 코기';
+      for (var i = 0; i < dogs.length; i++) {
+        console.log(i + '번째의 값: ' + dogs[i].value);
+      }
+      console.log(document.querySelectorAll('input:first-child'));
+      console.log(document.documentElement);
+      console.log(document.head);
+      console.log(document.body);
+      console.log(document.forms);
+      console.log(document.images);
+      console.log(document.anchors);
+      console.log(document.applets);
+      console.log(document.links);
+      console.log(document.embeds);
+      console.log(document.plugins);
+      console.log(document.scripts);
+    </script>
+  </body>
+</html>

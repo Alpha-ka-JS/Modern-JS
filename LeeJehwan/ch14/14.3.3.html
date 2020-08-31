@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a id="google" href="http://google.com">구글</a>
+    <a id="naver" href="http://google.com" class="1 2 3">구글</a>
+    <script>
+      var anchor = document.getElementById('naver');
+      anchor.setAttribute('href', 'http://www.naver.com');
+      console.log(anchor);
+      console.log(anchor.hasAttribute('href'));
+      console.log(anchor.removeAttribute('href'));
+      console.log(anchor.hasAttribute('href'));
+    </script>
+  </body>
+</html>

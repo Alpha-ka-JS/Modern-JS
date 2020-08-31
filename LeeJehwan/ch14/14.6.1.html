@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 50px;
+        height: 20px;
+        background-color: tomato;
+      }
+      div:nth-child(2) {
+        margin: 30px;
+        background-color: powderblue;
+      }
+      body {
+        height: 200vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div>1122</div>
+    <div>1122</div>
+    <div>1122</div>
+    <div>1122</div>
+    <script>
+      var divs = document.getElementsByTagName('div');
+      var rect = divs[1].getBoundingClientRect();
+      console.log(rect);
+      console.log(document.documentElement.clientWidth);
+      console.log(document.documentElement.clientHeight);
+      console.log(window.innerWidth);
+      console.log(window.innerHeight);
+      // 크롬 동작 x
+      console.log(document.body.scrollLeft);
+      console.log(document.body.scrollTop);
+      // 크롬 동작 o
+      console.log(window.pageXOffset);
+      console.log(window.pageYOffset);
+
+      function getScrollTop() {
+        if (window.pageYOffset !== undefined) {
+          return window.pageYOffset;
+        } else {
+          return document.documentElement.scrollTop || document.body.scrollTop;
+        }
+      }
+      function getScrollLeft() {
+        if (window.pageXOffset !== undefined) {
+          return window.pageXOffset;
+        } else {
+          return document.documentElement.scrollLeft || document.body.scrollLeft;
+        }
+      }
+      console.log(getScrollLeft());
+      console.log(getScrollTop());
+
+      console.log(rect.x + getScrollLeft());
+      console.log(rect.y + getScrollTop());
+    </script>
+  </body>
+</html>

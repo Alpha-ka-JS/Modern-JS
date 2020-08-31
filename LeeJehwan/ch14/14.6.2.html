@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        display: inline-block;
+        padding: 100px;
+        margin: 100px;
+        margin-left: 0;
+        background-color: tomato;
+      }
+      body {
+        height: 200vh;
+        margin: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" id="sec1">#sec1</div>
+    <br />
+    <div class="box" id="sec2">#sec2</div>
+    <br />
+    <div class="box" id="sec3">#sec3</div>
+    <br />
+    <script>
+      function getScrollTop() {
+        if (window.pageYOffset !== undefined) {
+          return window.pageYOffset;
+        } else {
+          return document.documentElement.scrollTop || document.body.scrollTop;
+        }
+      }
+      function getScrollLeft() {
+        if (window.pageXOffset !== undefined) {
+          return window.pageXOffset;
+        } else {
+          return document.documentElement.scrollLeft || document.body.scrollLeft;
+        }
+      }
+
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      var element = document.getElementById('sec3');
+      var rect = element.getBoundingClientRect();
+      scrollTo(rect.left + getScrollLeft(), rect.top + getScrollTop());
+
+      function smoothScroll(id, durationTime) {
+        var TIME_INTERVAL = 30;
+        var element = document.getElementById(id);
+        if (!element) return;
+        var ey = element.getBoundingClientRect().top;
+        var dy = (ey * TIME_INTERVAL) / durationTime;
+        var direction = dy > 0 ? 1 : -1;
+        var timer = setInterval(() => {
+          scrollBy(0, dy);
+          ey -= dy;
+          if (direction * ey <= 0) {
+            clearInterval(timer);
+            element.scrollIntoView();
+          }
+        }, TIME_INTERVAL);
+      }
+      smoothScroll('sec2', 1000);
+    </script>
+  </body>
+</html>
