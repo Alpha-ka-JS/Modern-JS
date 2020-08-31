@@ -40,9 +40,7 @@
         if (window.pageXOffset !== undefined) {
           return window.pageXOffset;
         } else {
-          //   return (
-          //     document.documentElement.scrollLeft || docuemnt.body.scrollLeft
-          //   ); //??
+          return document.documentElement.scrollLeft || docuemnt.body.scrollLeft; //??
         }
       }
       function scrollToTarget() {
