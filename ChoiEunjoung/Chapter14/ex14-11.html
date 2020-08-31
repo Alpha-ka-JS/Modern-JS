@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>textContent 함수의 사용법..?</title>
+    <script src="./elt.js"></script>
+    <script>
+      window.onload = function () {
+        var headline = elt('h1', null, 'DOM에 관하여');
+        document.body.appendChild(headline);
+        var input = elt('input', { type: 'button', value: 'click' });
+        document.body.appendChild(input);
+        var bloodtypes = ['A', 'B', 'O', 'AB'];
+        var form = elt('form', { id: 'menu' });
+        var select = elt('select', { name: 'bloodtype', id: 'bloodtype' });
+        bloodtypes.forEach(function (type) {
+          select.appendChild(elt('option', null, type));
+        });
+        form.appendChild(select);
+        document.body.appendChild(form);
+        //노드 삭제하기
+        //삭제할 수 있는 노드가 해당 노드의 자식노드다 그래서 부모 노드 객체에서 removeChild를 호출해야함
+        // select.parentNode.removeChild(select);
+
+        //노드 치환하기
+        // select.parentNode.replaceChild(headline, select);
+      };
+    </script>
+  </head>
+  <body></body>
+</html>
