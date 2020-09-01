@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TOP PAGE</title>
+    <script>
+      window.onload = function () {
+        var w;
+        document.getElementById('open').onclick = function () {
+          w = open('newpage.html', 'new page', 'width=400, height=300');
+        };
+        document.getElementById('close').onclick = function () {
+          if (w) w.close();
+        };
+        document.getElementById('moveby').onclick = function () {
+          if (w) w.moveBy(40, 20);
+        };
+        document.getElementById('moveTo').onclick = function () {
+          if (w) w.moveTo(100, 150);
+        };
+        document.getElementById('resize').onclick = function () {
+          if (w) w.resieBy(20, 40);
+        };
+        document.getElementById('resizeTo').onclick = function () {
+          if (w) w.resizeTo(200, 150);
+        };
+        document.getElementById('scrollBy').onclick = function () {
+          if (w) w.scrollBy(0, 100);
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <p>
+      <input type="button" value="open" id="open" />
+      <input type="button" value="close" id="close" />
+      <input type="button" value="moveby" id="moveby" />
+      <input type="button" value="moveTo" id="moveTo" />
+      <input type="button" value="resize" id="resize" />
+      <input type="button" value="resizeTo" id="resizeTo" />
+      <input type="button" value="scrollBy" id="scrollBy" />
+    </p>
+  </body>
+</html>
