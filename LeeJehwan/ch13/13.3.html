@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var a = '높이=684';
+      console.log((b = encodeURI(a)));
+      console.log((c = encodeURIComponent(a)));
+      console.log(decodeURI(b));
+      console.log(decodeURIComponent(c));
+
+      console.log(history);
+
+      window.onload = () => {
+        document.getElementById('button').onclick = () => {
+          location.href = 'http://www.google.com';
+        };
+        document.getElementById('button2').onclick = () => {
+          history.forward();
+        };
+        document.getElementById('button3').onclick = () => {
+          history.back();
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button" value="click">href button</button>
+    <button id="button2" value="click">forward button</button>
+    <button id="button3" value="click">back button</button>
+  </body>
+</html>

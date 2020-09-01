@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      console.log(location);
+      console.log(location.hash);
+      console.log(location.host);
+      console.log(location.hostname);
+      console.log(location.href);
+      console.log(location.pathname);
+      console.log(location.port);
+      console.log(location.protocol);
+      console.log(location.search);
+      location.assign('#');
+      //console.log(location.reload());
+      location.replace('#');
+      console.log(location.toString());
+      window.onload = () => {
+        document.getElementById('button').onclick = () => {
+          location.href = 'http://www.google.com';
+        };
+        document.getElementById('button2').onclick = () => {
+          location.assign('http://www.google.com');
+        };
+        document.getElementById('button3').onclick = () => {
+          location.replace('http://www.google.com');
+        };
+        document.getElementById('button4').onclick = () => {
+          setTimeout(() => {
+            location.replace('http://www.google.com');
+          }, 3000);
+        };
+        document.getElementById('button5').onclick = () => {
+          location.hash = '#header';
+        };
+        document.getElementById('button6').onclick = () => {
+          location.search = 'some data';
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button" value="click">href button</button>
+    <button id="button2" value="click">assign button</button>
+    <button id="button3" value="click">replace button</button>
+    <button id="button4" value="click">replace after 3sec button</button>
+    <button id="button5" value="click">hash</button>
+    <button id="button6" value="click">search</button>
+  </body>
+</html>
