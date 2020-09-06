@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>간단한 HTML 문서</title>
+  </head>
+  <body>
+    <h1>Dom 이란?</h1>
+    <p><strong>Document Object Model</strong>의 줄임말 입니다.</p>
+  </body>
+  <script>
+    // 비정상 동작
+    console.log(document.childNodes[1].childNodes[2]);
+    console.log(document.lastChild.lastChild);
+    // 정상 동작
+    console.log(document.children[0].children[1]);
+    console.log(document.firstElementChild.lastElementChild);
+
+    console.log(document.constructor);
+    console.log(document.nodeName, document.nodeValue, document.nodeType);
+    var element = document.children[0].children[1].firstElementChild;
+    console.log(element);
+    console.log(element.constructor);
+    console.log(element.nodeName, element.nodeValue, element.nodeType);
+  </script>
+</html>

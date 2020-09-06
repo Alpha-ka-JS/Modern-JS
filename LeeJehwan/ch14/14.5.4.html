@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>textContent 함수의 사용법</title>
+    <script src="./elt.js"></script>
+    <script>
+      window.onload = () => {
+        var headline = elt('h1', null, 'dom에 관하여');
+        document.body.appendChild(headline);
+        var input = elt('input', { type: 'button', value: 'click' });
+        document.body.appendChild(input);
+        var bloodtypes = ['A형', 'B형', 'O형', 'AB형'];
+        var form = elt('form', { id: 'menu' });
+        var select = elt('select', { name: 'bloodtype', id: 'bloodtype' });
+        bloodtypes.forEach((type) => {
+          select.appendChild(elt('option', null, type));
+        });
+        form.appendChild(select);
+        document.body.appendChild(form);
+
+        // document.body.removeChild(input);
+        // headline.parentNode.removeChild(headline);
+        // form.parentNode.replaceChild(headline, form);
+      };
+    </script>
+  </head>
+  <body></body>
+</html>
