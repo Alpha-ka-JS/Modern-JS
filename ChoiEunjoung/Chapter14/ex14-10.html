@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="doglist">
+      <li>포메</li>
+      <li>달마시안</li>
+    </ul>
+    <script>
+      //h1 요소 객체를 만든다
+      var headline = document.createElement('h1');
+      console.log(headline.nodeName);
+      console.log(headline.nodeType);
+      //텍스트 노드 생성
+      var newtext = document.createTextNode('hello world');
+      //이렇게 만든 노드들은 DOM트리와 아무 관련 없음
+
+      //노드 삽입하기
+      var doglist = document.getElementById('doglist');
+      var element = document.createElement('li');
+      var text = document.createTextNode('불독');
+      doglist.append(element);
+      element.append(text);
+      //   element.textContent = '퍼그';
+      //   doglist.appendChild(element);
+      //두개가 같은 결과를 보여준다.
+
+      //지정한 노드 앞에 바로 삽입하기 :insertBefore
+      var doglist = document.getElementById('doglist');
+      var element = document.createElement('li');
+      var text = document.createTextNode('퍼그');
+      doglist.insertBefore(element, doglist.children[2]);
+      element.append(text);
+
+      //노드 옮기기
+      var doglist = document.getElementById('doglist');
+      doglist.appendChild(doglist.children[0]);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .box {
+      display: inline-block;
+      padding: 100px;
+      margin: 100px;
+      margin-left: 0;
+      background-color: yellowgreen;
+    }
+  </style>
+  <body>
+    <button
+      id="button"
+      onclick="document.getElementById('sec3').scrollIntoView()"
+      value="click"
+    >
+      click</button
+    ><br />
+    <div class="box" id="sec1">#sec1</div>
+    <br />
+    <div class="box" id="sec2">#sec2</div>
+    <br />
+    <div class="box" id="sec3">#sec3</div>
+    <br />
+    <script>
+      function getScrollTop() {
+        if (window.pageYOffset !== undefined) {
+          return window.pageYOffset;
+        } else {
+          return document.documentElement.scrollTop || document.body.scrollTop;
+        }
+      }
+      function getScrollLeft() {
+        if (window.pageXOffset !== undefined) {
+          return window.pageXOffset;
+        } else {
+          return document.documentElement.scrollLeft || docuemnt.body.scrollLeft; //??
+        }
+      }
+      function scrollToTarget() {
+        var element = document.getElementById('sec3');
+        element.scrollIntoView();
+      }
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      var element = document.getElementById('sec3');
+      var rect = element.getBoundingClientRect();
+      scrollTo(rect.left + getScrollLeft(), rect.top + getScrollTop());
+    </script>
+  </body>
+</html>

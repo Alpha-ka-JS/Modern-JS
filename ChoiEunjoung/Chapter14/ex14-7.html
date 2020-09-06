@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a id="school" href="http://school.gilbut.co.kr">길벗스쿨...</a>
+    <script>
+      var anchor = document.getElementById('school');
+      console.log(anchor.href);
+      //속성 프로퍼티는 쓰기가 가능하며 속성 값을 설정할 수 있다.
+      anchor.href = 'http://www.naver.com';
+      console.log(anchor.href);
+      //html 요소의 속성이름은 대소문자를 구분하지 않지만 자바스크립트 요소 객체의 속성 프로퍼티는 대소문자를 구분한다.
+      //html 요소 속성을 요소 객체의 속성 프로퍼티로 사용할때는 소문자로 작성한다 속성이 여러단어의 조합이면 카멜케이스
+      //예를들어 accesskey ->accessKey , accept-charset -> acceptCharset
+      anchor.setAttribute('href', 'http://www.gilbut.co.kr/');
+      console.log(anchor.href);
+    </script>
+  </body>
+</html>

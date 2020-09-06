@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ID속성으로 노드 가져오기</title>
+  </head>
+  <body>
+    <div>
+      <p class="important">document object model의 줄임말</p>
+    </div>
+    <div id="first">첫 번째 div</div>
+    <div id="second">두 번째 div</div>
+    <div id="third">세 번째 div</div>
+    <script>
+      var element = document.getElementById('second');
+      element.innerHTML = '여기를 수정함';
+      var element2 = document.getElementsByTagName('div'); // 이 메서드는 NodeList 객체를 반환함 유사배열객체고 읽기전용
+      element2[2].innerHTML = '세번째를 수정하게 될 것임';
+      var divs = document.getElementsByTagName('div');
+      var firstDivParas = divs[0].getElementsByTagName('p');
+      console.log(firstDivParas); //html collection  찍힘
+    </script>
+  </body>
+</html>
