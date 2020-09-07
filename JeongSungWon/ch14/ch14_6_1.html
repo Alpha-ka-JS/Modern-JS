@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,6 +33,7 @@
         if (window.pageXOffset !== undefined) {
           return window.pageXOffset;
         } else {
+          // eslint-disable-next-line prettier/prettier
           return (
             document.documentElement.scrollLeft || document.body.scrollLeft
           );

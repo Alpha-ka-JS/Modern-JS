@@ -1,6 +1,7 @@
 function Card(suit, rank) {
   this.suit = suit; // 슈트 (마크)
   this.rank = rank; // 번호
+  /* eslint-disable */
   Object.defineProperties(this, {
     color: {
       get: function () {
@@ -14,6 +15,7 @@ function Card(suit, rank) {
         }
       },
     },
+    /* eslint-enable */
     symbol: {
       get: function () {
         return Card.Suit[this.suit] + Card.Rank[this.rank];
