@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15.6 이벤트 리스너에 추가적인 정보를 넘기는 방법</title>
+    <script>
+      window.onload = function () {
+        var box = document.getElementById('box');
+        var box1 = document.getElementById('box1');
+        //익명함수 안에서 실행하기
+        box.addEventListener(
+          'click',
+          function (e) {
+            changeBgColor(e, 'red');
+          },
+          false
+        );
+        function changeBgColor(e, color) {
+          e.currentTarget.style.backgroundColor = color;
+        }
+        //함수를 반환하는 이벤트 리스너 등록하기
+        box1.addEventListener('click', changeBgColor1('blue'), false);
+        function changeBgColor1(color) {
+          return function (e) {
+            e.currentTarget.style.backgroundColor = color;
+          };
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div id="box">click me</div>
+    <div id="box1">click me1</div>
+  </body>
+</html>
