@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = () => {
+        function Person(name) {
+          this.name = name;
+        }
+        Person.prototype.sayHello = function () {
+          console.log('hello! ' + this.name);
+        };
+        var person = new Person('Tom');
+        var button1 = document.getElementById('button1');
+        button1.addEventListener('click', person.sayHello, false);
+
+        var button2 = document.getElementById('button2');
+        button2.addEventListener('click', person.sayHello.bind(person), false);
+
+        var button3 = document.getElementById('button3');
+        button3.addEventListener(
+          'click',
+          function (e) {
+            person.sayHello();
+          },
+          false
+        );
+
+        function Person2(name) {
+          this.name = name;
+          this.sayHello = () => {
+            console.log('hello! ' + this.name);
+          };
+        }
+        var person2 = new Person2('Tom');
+        var button4 = document.getElementById('button4');
+        button4.addEventListener('click', person2.sayHello, false);
+
+        function Person3(name) {
+          this.name = name;
+        }
+        Person3.prototype.handleEvent = function () {
+          console.log('hello! ' + this.name);
+        };
+        var person3 = new Person3('Tom');
+        var button5 = document.getElementById('button5');
+        button5.addEventListener('click', person3, false);
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button1">버튼1</button>
+    <button id="button2">버튼2</button>
+    <button id="button3">버튼3</button>
+    <button id="button4">버튼4</button>
+    <button id="button5">버튼5</button>
+  </body>
+</html>
