@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        var element = document.getElementById('button');
+        element.addEventListener(
+          'click',
+          function () {
+            console.log('hello!');
+            element.removeEventListener('click', arguments.callee.false);
+          },
+          false
+        );
+      };
+    </script>
+  </head>
+  <body></body>
+</html>
