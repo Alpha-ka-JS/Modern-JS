@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = () => {
+        var anchor = document.getElementById('google');
+        anchor.addEventListener(
+          'click',
+          (e) => {
+            if (!confirm('페이지를 이동하겠습니까?')) e.preventDefault();
+          },
+          false
+        );
+      };
+    </script>
+  </head>
+  <body>
+    <a href="http://google.com" id="google">google</a>
+  </body>
+</html>
