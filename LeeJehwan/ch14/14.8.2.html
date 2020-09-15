@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./elt.js"></script>
+    <script>
+      window.onload = () => {
+        createIconEditor(document.body, 16, 16);
+      };
+      function createIconEditor(parent, nx, ny) {
+        var color = elt('input', { type: 'color' });
+        var clear = elt('input', { type: 'button', value: '모두 삭제' });
+        clear.onclick = (e) => {
+          cells.forEach((td) => {
+            td.style.backgroundColor = 'white';
+          });
+        };
+        var table = elt('table');
+        table.style.borderCollapse = 'collapse';
+        table.style.marginTop = '5px';
+        var cells = [];
+        for (var j = 0; j < ny; j++) {
+          var tr = elt('tr');
+          table.appendChild(tr);
+          for (var i = 0; i < nx; i++) {
+            var td = elt('td');
+            cells.push(td);
+            td.style.width = td.style.height = '15px';
+            td.style.border = '1px solid gray';
+            tr.appendChild(td);
+            td.onclick = function changeColor(e) {
+              e.target.style.backgroundColor = color.value;
+            };
+          }
+        }
+        parent.appendChild(color);
+        parent.appendChild(clear);
+        parent.appendChild(table);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

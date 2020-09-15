@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="note">hello</p>
+    <script>
+      var element = document.getElementById('note');
+      console.log(element.style.color);
+      console.log(element.style.height);
+
+      var computedStyles = getComputedStyle(element);
+      console.log(computedStyles.color);
+      console.log(computedStyles.height);
+      if (computedStyles.color === 'rgb(255, 0, 0)') {
+        element.style.backgroundColor = 'tomato';
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="first">첫 번째</div>
+    <div id="second">두 번째</div>
+    <div id="third">세 번째</div>
+    <script>
+      var element = document.getElementsByTagName('div');
+      element[2].innerHTML = '여기를 수정함';
+    </script>
+  </body>
+</html>

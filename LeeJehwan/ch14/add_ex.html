@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>트럼프 카드 뒤집기</title>
+    <link href="card_style.css" rel="stylesheet" type="text/css" />
+    <script src="./elt.js"></script>
+    <script src="./card.js"></script>
+    <script>
+      function displayCards(cards) {
+        const W = 60;
+        const H = 100;
+        const SPACE = 20;
+        for (var i = 0, ix = 0, iy = 0; i < cards.length; i++) {
+          var front = elt('div', { class: 'front' }, cards[i].symbol);
+          var back = elt('div', { class: 'back' });
+          var card = elt('div', { class: 'card' }, front, back);
+          document.body.appendChild(card);
+          card.style.left = SPACE + ix * (W + SPACE) + 'px';
+          card.style.top = SPACE + iy * (H + SPACE) + 'px';
+          ix++;
+          if (i % 10 == 9) {
+            ix = 0;
+            iy++;
+          }
+          card.style.color = cards[i].color;
+          card.isFront = false;
+          card.style.cursor = 'pointer';
+          card.onclick = function clickEventHandler(e) {
+            var card = e.currentTarget;
+            if (card.isFront) {
+              card.style.transform = 'rotateY(0)';
+            } else {
+              card.style.transform = 'rotateY(180deg)';
+            }
+            card.isFront = !card.isFront;
+          };
+        }
+      }
+      window.onload = function () {
+        var deck = new Deck().shuffle();
+        var hand = deck.deal(5);
+        displayCards(hand);
+      };
+    </script>
+  </head>
+  <body></body>
+</html>
