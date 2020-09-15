@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p class="note invisible" id="note1">hello</p>
+    <script>
+      var el = document.getElementById('note1');
+      var list = el.classList;
+      console.log(list);
+      console.log(el.className);
+      list.toggle('invisible');
+      console.log(el.className);
+      list.toggle('hello');
+      console.log(el.className);
+      console.log(list.contains('hello'));
+    </script>
+  </body>
+</html>

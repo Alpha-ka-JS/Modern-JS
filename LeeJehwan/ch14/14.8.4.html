@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .empahasize {
+        background-color: tomato;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">JAVASCRIPT</h1>
+    <script>
+      var el = document.getElementById('title');
+      el.onmouseover = () => {
+        el.className = 'empahasize';
+      };
+      el.onmouseout = () => {
+        el.className = '';
+      };
+    </script>
+  </body>
+</html>
