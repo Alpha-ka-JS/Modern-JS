@@ -135,9 +135,7 @@ function buyAsync(name, m) {
   }, 1000);
 }
 Promise.all(
-  [buyAsync('Tom', 200)], //얘한테만 뭔가 나옴
-  [buyAsync('Buck', 500)],
-  [buyAsync('Huck', 800)]
+  [buyAsync('Tom', 200), buyAsync('Buck', 500), buyAsync('Huck', 800)] //얘한테만 뭔가 나옴
 )
   .then(function (bal) {
     console.log(bal);
