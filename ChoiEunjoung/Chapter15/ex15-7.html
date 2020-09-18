@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15.5 이벤트 리스너 안의 this</title>
+    <script>
+      window.onload = function () {
+        function Person(name) {
+          this.name = name;
+          this.sayBye = () => {
+            console.log('Bye ' + this.name);
+          };
+        }
+        Person.prototype.sayHello = function () {
+          console.log('Bonjour ' + this.name);
+        };
+        var person = new Person('Choi');
+        var button = document.getElementById('button');
+        // button.addEventListener('click', person.sayHello, false);
+        button.addEventListener('click', person.sayBye, false);
+        // button.addEventListener('click', person.sayHello.bind(person), false); //bind로 묶어준다
+        button.addEventListener(
+          'click',
+          function (e) {
+            person.sayHello(); //이렇게 익명함수 안에서 실행하면 그 메서드의 this 가 참조하는 객체를 가리킨다.
+          },
+          false
+        );
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button">button</button>
+  </body>
+</html>

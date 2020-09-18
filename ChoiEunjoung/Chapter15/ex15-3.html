@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15.2.3 removeEventListener 메서드로 이벤트 리스너 삭제하기</title>
+    <script>
+      window.onload = function () {
+        var element = document.getElementById('button');
+        element.addEventListener(
+          'click',
+          function () {
+            console.log('Hello');
+            element.removeEventListener('click', arguments.callee, false);
+            //log찍고 바로 이벤트 리스너 삭제되니까 한번만 출력됨
+          },
+          false
+        );
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button">버튼</button>
+  </body>
+</html>

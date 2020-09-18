@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15.4 이벤트의 전파</title>
+    <script>
+      /*
+      단독으로 존재하는 객체에서 이벤트가 발생하면 웹 브라우저는 해당 객체에 등록된 이벤트 처리기를 호출하지만
+      HTML요소에서 발생하면 그 요소는 물론 조상요소에 이벤트를 전파한다 
+      15.4.1 이벤트의 단계 
+      이벤트가 발생한 요소 : 이벤트 타겟 
+      이벤트를 발생시키는 것  : 이벤트 발사
+      부모요소안에 자식요소가 겹쳐진 상태로 배치하면 어떤 요소를 클릭했을 때 자식을 클릭한 것인지 부모를 클릭한 것인지 알 수 없다. 
+      요소에서 이벤트가 발생하면 DOM 트리의 관련요소 전체에 그 이벤트에 반응하는 이벤트 처리가 있는 지 확인해야함. 
+      1. 캡쳐링 단계 
+      이벤트가 window 객체에서 출발해 DOM트리를 타고 이벤트 타깃까지 전파된다. 
+      이벤트 타깃이 이벤트를 수신하기 전 이벤트를 빼돌리는 단계라는 뜻에서 캡쳐링임
+      2. 타킷 단계
+      이벤트가 타깃에게 전파되는 단계, 이벤트 타깃에 등록된 이벤트 처리기나 이벤트 리스너는 이 시점에 실행됨
+      3. 버블링단계
+      이벤트 타깃에서 출발해 DOM트리를 타고 Window객체까지 전파된다. 거품처럼 DOM트리 아래에서 위로 올라온다는 뜻에서 버블링이라고함.
+       */
+      window.onload = function () {
+        var outer = document.getElementById('outer');
+        var inner2 = document.getElementById('inner2');
+        var anchor = document.getElementById('school');
+        anchor.addEventListener(
+          'click',
+          function (e) {
+            if (!confirm('페이지를 이동하시겠습니까?????')) e.preventDefault(); //기본동작 취소하기
+          },
+          false
+        );
+        outer.addEventListener(
+          'click',
+          function (e) {
+            console.log('outer bubbling');
+          },
+          false
+        );
+        outer.addEventListener(
+          'click',
+          function (e) {
+            console.log('outer capturing');
+          },
+          true
+        );
+        inner2.addEventListener('click', function (e) {
+          console.log('inner(1)');
+          e.stopPropagation(); //주석처리하면 outer bubbling을 만날수잇음
+        });
+
+        inner2.addEventListener(
+          'click',
+          function (e) {
+            console.log('inner2 bubbling');
+            e.stopImmediatePropagation(); //이친구때문에 아래 inner(3)을 만날수없게됨
+          },
+          false
+        );
+        inner2.addEventListener('click', function (e) {
+          console.log('inner(3)');
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <div class="App"></div>
+    <div id="outer">
+      outer
+      <div id="inner1">inner1</div>
+      <div id="inner2">inner2</div>
+
+      <a href="http://naver.com" id="school">나는 네이버로간다</a>
+    </div>
+  </body>
+</html>

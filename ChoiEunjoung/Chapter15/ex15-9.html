@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15.7 커스텀이벤트</title>
+    <script>
+      /* 15.7.1 커스텀 이벤트를 생성하는 방법
+        createEvent 메서드로 이벤트 객체를 생성해서 초기화 함수안에서 초기화 가능 
+        initEvent 초기화
+        dispatchEvent 이벤트 보내기
+        */
+      window.onload = function () {
+        var event = document.createEvent('HTMLEvents');
+        event.initEvent('click', true, false); //2:버블링할지 3: 취소할 수 있는 이벤트를 만들지
+        var button = document.getElementById('button');
+        button.addEventListener('click', function (event) {
+          alert(`event cancelable :  ${event.cancelable}`); //이것을 보고 이슈를 처리해야겠다고 생각했으나 실행에 옮기지 않을듯..
+        });
+        button.dispatchEvent(event);
+      };
+    </script>
+  </head>
+  <body>
+    <p><button id="button">button</button></p>
+    <script>
+      /*
+        커스텀 이벤트와 표준 이벤트의 차이점 
+        : 사용자가 클릭등의 행위로 발생시킨 표준 이벤트와 자바스크립트 코드로 보낸 커스텀 이벤트는 이벤트 객체의 isTrusted 프로퍼티로 구별할 수 있다. 
+        true면 표준 fasle면 커스텀
+
+        커스텀 이벤트의 용도
+        : 객체와 객체가 통신하는 방법 중 하나가 커스텀 이벤트를 보내는 것
+        한쪽객체에서는 이벤트를 발생시키고 다른 쪽에서는 이벤트를 처리하는 것
+        이렇게하면 객체와 객체 사이의 통신수단을 크게 고민하지 않아도 되고 DOM이 제공하는 표준적인 방법을 사용햇 객체와 객체가 통신하게 만들수있다. 
+        */
+    </script>
+  </body>
+</html>
