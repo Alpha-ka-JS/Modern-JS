@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        var anchor = document.getElementById('school');
+        anchor.addEventListener(
+          'click',
+          function (e) {
+            if (!confirm('페이지를 이동하시겠습니까?')) e.preventDefault();
+          },
+          false
+        );
+      };
+    </script>
+  </head>
+  <body>
+    <a href="http://school.gilbut.co.kr" id="school">길벗스쿨</a>
+  </body>
+</html>
