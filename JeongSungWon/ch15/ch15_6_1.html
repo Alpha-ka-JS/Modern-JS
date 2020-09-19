@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        var box = document.getElementById('box');
+        box.addEventListener(
+          'click',
+          function (e) {
+            changeBgColor(e, 'red');
+          },
+          false
+        );
+        function changeBgColor(e, color) {
+          e.currentTarget.style.backgroundColor = color;
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div id="box">click me</div>
+  </body>
+</html>
