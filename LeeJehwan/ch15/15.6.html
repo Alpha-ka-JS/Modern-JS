@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = () => {
+        var box1 = document.getElementById('box1');
+        box1.addEventListener(
+          'click',
+          (e) => {
+            changeBgColor1(e, 'red');
+          },
+          false
+        );
+        function changeBgColor1(e, color) {
+          e.currentTarget.style.backgroundColor = color;
+        }
+
+        var box2 = document.getElementById('box2');
+        box2.addEventListener('click', changeBgColor2('red'), false);
+        function changeBgColor2(color) {
+          return function (e) {
+            e.currentTarget.style.backgroundColor = color;
+          };
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div id="box1">Click me</div>
+    <div id="box2">Click me</div>
+  </body>
+</html>

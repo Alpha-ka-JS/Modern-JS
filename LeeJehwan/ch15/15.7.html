@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = () => {
+        var event = document.createEvent('HTMLEvents');
+        event.initEvent('click', true, false);
+        var button = document.getElementById('button');
+        button.addEventListener('click', function (e) {
+          console.log(e);
+          alert(`event.cancelable: ${e.cancelable}`);
+        });
+        button.dispatchEvent(event);
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button">버튼</button>
+  </body>
+</html>
