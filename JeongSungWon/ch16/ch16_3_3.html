@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>간단한 Ajax 예제</title>
+    <script>
+      window.onload = function () {
+        var req = new XMLHttpRequest();
+        req.addEventListener(
+          'load',
+          function () {
+            document.getElementById('view').innerHTML = req.responseText;
+          },
+          false
+        );
+        req.open('GET', 'data.txt');
+        req.send(null);
+      };
+    </script>
+  </head>
+  <body>
+    <p id="view"></p>
+  </body>
+</html>
