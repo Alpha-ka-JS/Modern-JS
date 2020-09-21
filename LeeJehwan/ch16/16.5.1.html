@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function show(data) {
+        console.log('name: ' + data.name);
+        console.log('price: ' + data.price);
+      }
+      window.onload = function () {
+        var url = 'jsonp.js';
+        var script = document.createElement('script');
+        script.setAttribute('src', url);
+        document.getElementsByTagName('head')[0].appendChild(script);
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

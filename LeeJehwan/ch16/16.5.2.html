@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>main</title>
+    <script>
+      window.onload = () => {
+        var frameWindow = document.getElementById('frame').contentWindow;
+        var message = document.getElementById('message');
+        var button = document.getElementById('button');
+        var targetOrigin = '/';
+        button.addEventListener(
+          'click',
+          () => {
+            frameWindow.postMessage(message.value, targetOrigin);
+          },
+          false
+        );
+      };
+    </script>
+  </head>
+  <body>
+    <p>
+      <input type="text" id="message" size="60" />
+      <input type="button" id="button" value="send" />
+    </p>
+    <iframe src="16.5.3.html" id="frame" width="300px" height="200px"></iframe>
+  </body>
+</html>
