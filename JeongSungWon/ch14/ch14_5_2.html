@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./elt.js">
+      window.onload = function () {
+        var headline = elt('h1', null, 'DOM에 관하여');
+        document.body.appendChild(headline);
+        var input = elt('input', {type:'button',value:'click'});
+        document.body.appendChild(input);
+      };
+    </script>
+  </head>
+  <body>
+    <form id="menu">
+      <select name="bloodtype" id="bloodtype">
+        <option>A형</option>
+        <option>B형</option>
+        <option>0형</option>
+        <option>AB형</option>
+      </select>
+    </form>
+  </body>
+</html>

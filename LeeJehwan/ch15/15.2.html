@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = () => {
+        var element = document.getElementById('box1');
+        element.addEventListener(
+          'click',
+          (e) => {
+            e.currentTarget.style.backgroundColor = 'red';
+          },
+          false
+        );
+        var element2 = document.getElementById('box2');
+        element2.addEventListener('click', changeColor, false);
+        var element3 = document.getElementById('button');
+        element3.addEventListener(
+          'click',
+          function () {
+            console.log('hello');
+            element3.removeEventListener('click', arguments.callee, false);
+          },
+          false
+        );
+      };
+      function changeColor(e) {
+        e.currentTarget.style.backgroundColor = 'tomato';
+      }
+    </script>
+  </head>
+  <body>
+    <div id="box1">click me</div>
+    <div id="box2">click me</div>
+    <button id="button">버튼</button>
+  </body>
+</html>

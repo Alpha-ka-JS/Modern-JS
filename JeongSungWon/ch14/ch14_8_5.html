@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p class="note invisible" id="note1"></p>
+    <script>
+      var element = document.getElementById('note1');
+      var list = element.classList;
+      list.toggle('invisible');
+      console.log(element.className);
+      list.toggle('invisible');
+      console.log(element.className);
+    </script>
+  </body>
+</html>

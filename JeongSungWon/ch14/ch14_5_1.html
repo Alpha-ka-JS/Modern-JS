@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="doglist">
+      <li>포메라니안</li>
+      <li>달마시안</li>
+    </ul>
+    <script>
+      var doglist = document.getElementById('doglist');
+      var element = document.createElement('li');
+      var text = document.createTextNode('불독');
+      doglist.insertBefore(element, doglist.children[1]);
+      element.appendChild(text);
+      doglist.appendChild(doglist.children[0]);
+    </script>
+  </body>
+</html>
