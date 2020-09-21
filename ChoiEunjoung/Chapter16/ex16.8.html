@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>16.5 크로스 오리진 통신</title>
+    <script>
+      //XMLHttpRequest는 동일 출처 정책을 준수해서 크로스 오리진 통신을 할 수 없는데 JSONP,CORS,postMesage를 사용하면 가능함
+      //16.5.1 JSONP
+      //sciprt 요소의 src 속성이 가리키는 자바 스크립트 파일은 다른 도메인에 위치해도 읽어들일 수 있다는 성질을 활용한 기법
+      function show(data) {
+        console.log('name : ' + data.name);
+        console.log('price : ' + data.price);
+      }
+      window.onload = function () {
+        var url = 'jsonp.js';
+        var script = document.createElement('script');
+        script.setAttribute('src', url);
+        document.getElementsByTagName('head')[0].appendChild(script);
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

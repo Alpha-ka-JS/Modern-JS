@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>postMessage 예제</title>
+    <script>
+      window.onload = function () {
+        var frameWindow = document.getElementById('frame').contentWindow;
+        var message = document.getElementById('message');
+        var button = document.getElementById('button');
+        var targetOrigin = '/';
+        button.addEventListener(
+          'click',
+          function () {
+            frameWindow.postMessage(message.value, targetOrigin);
+          },
+          false
+        );
+      };
+    </script>
+  </head>
+  <body>
+    <p>
+      <input type="text" size ="60 id="message">
+      <input type="button" id="button" value="SEND" />
+    </p>
+    <iframe src="other.html" id="frame" width="300px" height="200px"></iframe>
+  </body>
+</html>
