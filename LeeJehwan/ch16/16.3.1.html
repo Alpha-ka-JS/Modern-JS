@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = () => {
+        var req = new XMLHttpRequest();
+        console.log('A: ready state = ' + req.readyState);
+        req.onreadystatechange = () => {
+          //console.log(req);
+          console.log('B: ready state = ' + req.readyState);
+          if (req.readyState === 4 && req.status === 200) {
+            document.getElementById('view').innerHTML = req.responseText;
+          }
+        };
+        req.open('GET', 'data.txt');
+        req.send(null);
+      };
+    </script>
+  </head>
+  <body>
+    <p id="view"></p>
+  </body>
+</html>
