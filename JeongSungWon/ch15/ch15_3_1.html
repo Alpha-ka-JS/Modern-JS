@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./elt.js"></script>
+    <script>
+      window.onload = function () {
+        var box = elt('div', null, 'JavaScript');
+        document.body.appendChild(box);
+        var boxOffsetX, boxOffsetY;
+        box.style.display = 'inline-block';
+        box.style.position = 'absolute';
+        box.style.padding = '10px';
+        box.style.backgroundColor = 'blue';
+        box.style.color = 'white';
+        box.style.cursor = 'pointer';
+        box.addEventListener(
+          'mousedown',
+          function mouseDownListener(e) {
+            document.addEventListener('mousemove', mouseMoveListener, false);
+            boxOffsetX = e.offsetX;
+            boxOffsetY = e.offsetY;
+          },
+          false
+        );
+        document.addEventListener(
+          'mouseup',
+          function mouseUpListener(e) {
+            document.removeEventListener('mousemove', mouseMoveListener, false);
+          },
+          false
+        );
+        function mouseMoveListener(e) {
+          box.style.left = e.pageX - boxOffsetX + 'px';
+          box.style.top = e.pageY - boxOffsetY + 'px';
+        }
+      };
+    </script>
+  </head>
+  <body></body>
+</html>
