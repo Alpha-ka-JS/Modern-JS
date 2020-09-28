@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>16.4 응답받기</title>
+    <script>
+      //응답 데이터의 데이터 타입으로 텍스트 데이터를 사용할 수 있으나 다른 것도 사용 가능
+      //다른 데이터 타입을 응답으로 받을때는  response 프로퍼티로 응답 데이터를 받고 send메서드에 responseType 프로퍼티에 값을 받고자 하는 데이터 타입을 설정해줌
+      //req.responseType="json" 이런식
+      //객체 생성
+      var req = new XMLHttpRequest();
+      //서버와 통신할때 사용할 처리방법 등록
+      var jsonObj;
+      req.addEventListener(
+        'load',
+        function () {
+          //   jsonObj = JSON.parse(req.responseText);
+          jsonObj = req.response;
+          console.log(jsonObj);
+        },
+        false
+      );
+      req.responseType = 'json';
+      //요청을 전송하고 통신 시작
+      req.open('GET', 'data.json', true);
+      req.send(null);
+    </script>
+  </head>
+  <body>
+    <p id="view"></p>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>도메인이 다른 페이지</title>
+    <script>
+      window.onload = function () {
+        var result = document.getElementById('display');
+        window.addEventListener(
+          'message',
+          function (e) {
+            var sourceOrigin = location.origin;
+            if (e.origin !== sourceOrigin) return;
+            display.textContent = e.data;
+          },
+          false
+        );
+      };
+    </script>
+  </head>
+  <body>
+    <div id="display"></div>
+  </body>
+</html>

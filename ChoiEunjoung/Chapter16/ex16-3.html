@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>16.3 XMLHttpRequest</title>
+    <script>
+      window.onload = function () {
+        var req = new XMLHttpRequest(); //XMLHttpRequest 객체 생성
+        //비동기통신도 가능하고 동기통신도 가능하나 동기통신을 하는 경우는 거의 없음
+        //통신할 때 사용할 처리 방법을 등록한다.
+        console.log('A: readyState = ' + req.readyState);
+        req.onreadystatechange = function () {
+          //readyState 값이 바뀌면 실행되는 것
+          console.log('B : readyState = ' + req.readyState);
+          if (req.readyState == 4) {
+            //응답을 모두 수신했다면
+            if (req.status == 200) {
+              // 서버가 성공적으로 처리했다면
+              document.getElementById('view').innerHTML = req.responseText;
+            }
+          }
+        };
+        req.open('GET', 'data.txt');
+        req.send(null);
+      };
+    </script>
+  </head>
+  <body>
+    <p id="view"></p>
+  </body>
+</html>

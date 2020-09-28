@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>간단한 ajax 예제</title>
+    <script>
+      window.onload = function () {
+        //객체생성
+        var req = new XMLHttpRequest();
+        //서버와 통신할때 처리방법
+        req.addEventListener(
+          'loadstart',
+          function () {
+            document.getElementById('view').innerHTML = '통신중';
+          },
+          false
+        );
+        req.addEventListener(
+          'error',
+          function () {
+            document.getElementById('view').innerHTML = 'ERROR';
+          },
+          false
+        );
+        //요청을 전송하고 통신 시작
+        req.open('GET', 'data.txt');
+        req.send(null); //send 메서드 인수로 null
+      };
+    </script>
+  </head>
+  <body>
+    <p id="view"></p>
+  </body>
+</html>
